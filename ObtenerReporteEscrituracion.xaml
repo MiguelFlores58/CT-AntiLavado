@@ -1,0 +1,1136 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ObtenerReporteEscrituracion" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ObtenerReporteEscrituracion_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Globalization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ObtenerReporteEscrituracion" sap:VirtualizedContainerService.HintSize="1163,792" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Principal" sap:VirtualizedContainerService.HintSize="586,769" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="strFechaIni" />
+        <Variable x:TypeArguments="x:String" Name="strFechaFinal" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: 10.112.20.12 - Conexión a Escritorio remoto" sap:VirtualizedContainerService.HintSize="552,686" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="ab29f4c3-3561-4302-a90d-34d025c72939" Timeout="60" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518,370" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Sequence DisplayName="Login sistema de comercializacion" sap:VirtualizedContainerService.HintSize="484,57" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: smcte.exe" sap:VirtualizedContainerService.HintSize="502,2007" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="ec6e5d52-5191-4fb2-8013-4db70874f805" Timeout="60" Version="V2">
+                  <uix:NApplicationCard.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,1689" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="211f2cb4-dacd-491b-a058-1bd419a75463" DisplayName="CV Screen Scope 'pbdw115'" sap:VirtualizedContainerService.HintSize="434,1627" sap2010:WorkflowViewState.IdRef="CVScope_1" SendOnPremData="False" Version="V6">
+                          <p:CVScope.Body>
+                            <ActivityAction x:TypeArguments="x:Object">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" Descriptor="[&quot;Target: InputBox (70,201,114,21)&quot; +&#xA;&quot;Anchor: Text 'Empresa:' (16,205,54,11)&quot;]" DesignTimeCacheId="211f2cb4-dacd-491b-a058-1bd419a75463" DesignTimeScaleFactor="1" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,219" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_1" InformativeScreenshot="1da5fd3c49ec2988d0fafdbdd5469a12" NumberOfScrolls="2" ScrollDirection="None" Text="[&quot;02&quot;]" Version="V6">
+                                  <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
+                                    <uc:CvDescriptor Id="7b0eafab-12b0-4cb3-880f-c8ace4d92023">
+                                      <uc:CvDescriptor.Anchors>
+                                        <x:Array Type="uc:CvElementDescriptor">
+                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="16, 205, 54, 11" ElementType="Text" Text="Empresa:" />
+                                        </x:Array>
+                                      </uc:CvDescriptor.Anchors>
+                                      <uc:CvDescriptor.Target>
+                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="70, 201, 114, 21" ElementType="InputBox" />
+                                      </uc:CvDescriptor.Target>
+                                    </uc:CvDescriptor>
+                                  </p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
+                                  <p:CvTypeIntoWithDescriptor.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="5c26ddf0-6d6c-4fa5-9de7-beb0a1db9615">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </p:CvTypeIntoWithDescriptor.Target>
+                                </p:CvTypeIntoWithDescriptor>
+                                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="400,212" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3" />
+                                <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" Descriptor="[&quot;Target: InputBox (70,229,114,21)&quot; +&#xA;&quot;Anchor: Text 'Usuario:' (22,231,47,11)&quot;]" DesignTimeCacheId="211f2cb4-dacd-491b-a058-1bd419a75463" DesignTimeScaleFactor="1" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,219" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_2" InformativeScreenshot="56b3b18efa5b32640943f4726e485b0c" NumberOfScrolls="2" ScrollDirection="None" Text="[&quot;9993&quot;]" Version="V6">
+                                  <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
+                                    <uc:CvDescriptor Id="16e1f6d4-c00c-47e5-a385-a76010ea6f8a">
+                                      <uc:CvDescriptor.Anchors>
+                                        <x:Array Type="uc:CvElementDescriptor">
+                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="22, 231, 47, 11" ElementType="Text" Text="Usuario:" />
+                                        </x:Array>
+                                      </uc:CvDescriptor.Anchors>
+                                      <uc:CvDescriptor.Target>
+                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="70, 229, 114, 21" ElementType="InputBox" />
+                                      </uc:CvDescriptor.Target>
+                                    </uc:CvDescriptor>
+                                  </p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
+                                  <p:CvTypeIntoWithDescriptor.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="caf37d46-3259-408c-95c3-4fa991bc537d">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </p:CvTypeIntoWithDescriptor.Target>
+                                </p:CvTypeIntoWithDescriptor>
+                                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="400,212" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3" />
+                                <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" Descriptor="[&quot;Target: InputBox (69,255,115,21)&quot; +&#xA;&quot;Anchor: Text 'Password:' (8,258,60,11)&quot;]" DesignTimeCacheId="211f2cb4-dacd-491b-a058-1bd419a75463" DesignTimeScaleFactor="1" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,219" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_3" InformativeScreenshot="eab6964118e7044fef9029ac7b9a55d2" NumberOfScrolls="2" ScrollDirection="None" Text="[&quot;r2d2arturo&quot;]" Version="V6">
+                                  <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
+                                    <uc:CvDescriptor Id="75004cb6-7aa9-402c-8489-c945a6ecc511">
+                                      <uc:CvDescriptor.Anchors>
+                                        <x:Array Type="uc:CvElementDescriptor">
+                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="8, 258, 60, 11" ElementType="Text" Text="Password:" />
+                                        </x:Array>
+                                      </uc:CvDescriptor.Anchors>
+                                      <uc:CvDescriptor.Target>
+                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="69, 255, 115, 21" ElementType="InputBox" />
+                                      </uc:CvDescriptor.Target>
+                                    </uc:CvDescriptor>
+                                  </p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
+                                  <p:CvTypeIntoWithDescriptor.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="77c08263-80c5-480f-84f0-dfe332fc3b73">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </p:CvTypeIntoWithDescriptor.Target>
+                                </p:CvTypeIntoWithDescriptor>
+                                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="400,203" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" Shortcuts="[d(hk)][k(Enter)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V3" />
+                              </Sequence>
+                            </ActivityAction>
+                          </p:CVScope.Body>
+                          <p:CVScope.DesignTimeCache>
+                            <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" DataSent="False" />
+                          </p:CVScope.DesignTimeCache>
+                          <p:CVScope.DesignTimeCacheContainer>
+                            <uc:CvCacheContainer>
+                              <uc:CvCacheContainer.Caches>
+                                <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
+                                  <uc:CVCache DataSent="False" DisplayName="Screen CV Type Into - 'Empresa (Main)" Id="211f2cb4-dacd-491b-a058-1bd419a75463" InformativeScreenshot="3ff79e9b07e0f0cb1220b99a90e7beaa" LogicalPosition="2662, 394" OcrText="SISTEMA DE COMERCIALIZACION DE VIVIENDA Version 9.1.4.312.0 de 15/04/2024 10:31:39 ERonROL Empresa: Usuario: Password: Aceptar Salir" Position="2662, 394" ScreenshotGuid="2ca95deb-15bb-4bf8-a496-a6ef810664ab" ServerVersion="0">
+                                    <uc:CVCache.CvAnchorRelations>
+                                      <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="8">
+                                        <uc:AnchorRelationInfo IsTargetText="False" Target="5">
+                                          <uc:AnchorRelationInfo.Anchors>
+                                            <x:Array Type="x:Int32">
+                                              <x:Int32>12</x:Int32>
+                                            </x:Array>
+                                          </uc:AnchorRelationInfo.Anchors>
+                                        </uc:AnchorRelationInfo>
+                                        <uc:AnchorRelationInfo IsTargetText="False" Target="2">
+                                          <uc:AnchorRelationInfo.Anchors>
+                                            <x:Array Type="x:Int32">
+                                              <x:Int32>11</x:Int32>
+                                            </x:Array>
+                                          </uc:AnchorRelationInfo.Anchors>
+                                        </uc:AnchorRelationInfo>
+                                        <uc:AnchorRelationInfo IsTargetText="False" Target="6">
+                                          <uc:AnchorRelationInfo.Anchors>
+                                            <x:Array Type="x:Int32">
+                                              <x:Int32>11</x:Int32>
+                                            </x:Array>
+                                          </uc:AnchorRelationInfo.Anchors>
+                                        </uc:AnchorRelationInfo>
+                                        <uc:AnchorRelationInfo IsTargetText="False" Target="4">
+                                          <uc:AnchorRelationInfo.Anchors>
+                                            <x:Array Type="x:Int32">
+                                              <x:Int32>12</x:Int32>
+                                            </x:Array>
+                                          </uc:AnchorRelationInfo.Anchors>
+                                        </uc:AnchorRelationInfo>
+                                        <uc:AnchorRelationInfo IsTargetText="False" Target="3">
+                                          <uc:AnchorRelationInfo.Anchors>
+                                            <x:Array Type="x:Int32">
+                                              <x:Int32>13</x:Int32>
+                                            </x:Array>
+                                          </uc:AnchorRelationInfo.Anchors>
+                                        </uc:AnchorRelationInfo>
+                                      </scg:List>
+                                    </uc:CVCache.CvAnchorRelations>
+                                    <uc:CVCache.CvUiElements>
+                                      <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="8">
+                                        <uc:CvElementInfo Category="Button" Region="401, 256, 76, 22" />
+                                        <uc:CvElementInfo Category="Button" Region="323, 256, 75, 22" />
+                                        <uc:CvElementInfo Category="InputBox" Region="185, 201, 280, 20" />
+                                        <uc:CvElementInfo Category="InputBox" Region="69, 255, 115, 21" />
+                                        <uc:CvElementInfo Category="InputBox" Region="70, 229, 114, 21" />
+                                        <uc:CvElementInfo Category="InputBox" Region="185, 229, 280, 20" />
+                                        <uc:CvElementInfo Category="InputBox" Region="70, 201, 114, 21" />
+                                      </scg:List>
+                                    </uc:CVCache.CvUiElements>
+                                    <uc:CVCache.OcrTexts>
+                                      <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="16">
+                                        <uc:OcrTextInfo Region="0, 4, 127, 30" Text="SISTEMA" />
+                                        <uc:OcrTextInfo Region="133, 9, 40, 19" Text="DE" />
+                                        <uc:OcrTextInfo Region="178, 8, 292, 21" Text="COMERCIALIZACION" />
+                                        <uc:OcrTextInfo Region="1, 42, 39, 19" Text="DE" />
+                                        <uc:OcrTextInfo Region="44, 39, 140, 23" Text="VIVIENDA" />
+                                        <uc:OcrTextInfo Region="5, 171, 44, 12" Text="Version" />
+                                        <uc:OcrTextInfo Region="50, 172, 56, 12" Text="9.1.4.312.0" />
+                                        <uc:OcrTextInfo Region="108, 172, 16, 11" Text="de" />
+                                        <uc:OcrTextInfo Region="124, 172, 56, 12" Text="15/04/2024" />
+                                        <uc:OcrTextInfo Region="182, 172, 43, 13" Text="10:31:39" />
+                                        <uc:OcrTextInfo Region="332, 155, 131, 22" Text="ERonROL" />
+                                        <uc:OcrTextInfo Region="16, 205, 54, 11" Text="Empresa:" />
+                                        <uc:OcrTextInfo Region="22, 231, 47, 11" Text="Usuario:" />
+                                        <uc:OcrTextInfo Region="8, 258, 60, 11" Text="Password:" />
+                                        <uc:OcrTextInfo Region="339, 260, 41, 12" Text="Aceptar" />
+                                        <uc:OcrTextInfo Region="428, 260, 23, 11" Text="Salir" />
+                                      </scg:List>
+                                    </uc:CVCache.OcrTexts>
+                                  </uc:CVCache>
+                                </scg:List>
+                              </uc:CvCacheContainer.Caches>
+                            </uc:CvCacheContainer>
+                          </p:CVScope.DesignTimeCacheContainer>
+                          <p:CVScope.OCREngine>
+                            <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                              <ActivityFunc.Argument>
+                                <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                              </ActivityFunc.Argument>
+                              <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="400,25" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_1" Image="[Image]" Language="en" NoopExecution="False" Profile="Screen" Scale="1" Timeout="100000" />
+                            </ActivityFunc>
+                          </p:CVScope.OCREngine>
+                          <p:CVScope.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="69731ced-5b55-46e0-9444-7f7183257177" InformativeScreenshot="c80455c3522aace70b886ebd80b8429d" Selector="&lt;wnd cls='pbdw115' title='none' /&gt;" WaitForReady="INTERACTIVE">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                            </ui:Target>
+                          </p:CVScope.Target>
+                          <p:CVScope.UseLocalServer>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </p:CVScope.UseLocalServer>
+                        </p:CVScope>
+                      </Sequence>
+                    </ActivityAction>
+                  </uix:NApplicationCard.Body>
+                  <uix:NApplicationCard.TargetApp>
+                    <uix:TargetApp Area="2601, 393, 558, 294" FilePath="E:\EnkontrolV9\Aplicaciones_V9\Vivienda\smcte.exe" IconBase64="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" InformativeScreenshot="224ea946f7556263c94759f69579b421.png" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='10.112.20.12 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='smcte.exe' cls='FNWNS*' idx='*' /&gt;" />
+                  </uix:NApplicationCard.TargetApp>
+                </uix:NApplicationCard>
+              </Sequence>
+              <Sequence DisplayName="Elegir la opcion del reporte" sap:VirtualizedContainerService.HintSize="484,57" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Sistema de Comercialización de Vivienda                                         " sap:VirtualizedContainerService.HintSize="584,1371" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="34699d7f-6a61-45de-82fb-07d5b3a0e7f1" Timeout="60" Version="V2">
+                  <uix:NApplicationCard.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="550,1053" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="586e48c9-6a7e-4c91-b49d-86f168d3f3ca" DisplayName="CV Screen Scope 'smcte.exe Sistema'" sap:VirtualizedContainerService.HintSize="434,991" sap2010:WorkflowViewState.IdRef="CVScope_2" SendOnPremData="False" Version="V6">
+                          <p:CVScope.Body>
+                            <ActivityAction x:TypeArguments="x:Object">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                <p:CvClickWithDescriptor DelayMS="{x:Null}" DelayScreenshotAfterScroll="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="2000" Descriptor="[&quot;Target: Text 'Procesos Diarios' (71,26,80,11)&quot;]" DesignTimeCacheId="586e48c9-6a7e-4c91-b49d-86f168d3f3ca" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="400,219" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_1" InformativeScreenshot="2e34b16c292cf8c1ffedd9940e551408" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
+                                  <p:CvClickWithDescriptor.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </p:CvClickWithDescriptor.CursorPosition>
+                                  <p:CvClickWithDescriptor.DesignTimeDescriptor>
+                                    <uc:CvDescriptor Id="645f296a-0cd2-43f0-b50d-f3eb1dae0ca0">
+                                      <uc:CvDescriptor.Target>
+                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="71, 26, 80, 11" ElementType="Text" Text="Procesos Diarios" />
+                                      </uc:CvDescriptor.Target>
+                                    </uc:CvDescriptor>
+                                  </p:CvClickWithDescriptor.DesignTimeDescriptor>
+                                  <p:CvClickWithDescriptor.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b8e38088-31fe-4c3d-8815-3f89d1d30730">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </p:CvClickWithDescriptor.Target>
+                                </p:CvClickWithDescriptor>
+                                <p:CvClickWithDescriptor DelayMS="{x:Null}" DelayScreenshotAfterScroll="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="2000" Descriptor="[&quot;Target: Text 'Proceso de escrituracion' (120,489,119,12)&quot;]" DesignTimeCacheId="28ea36a4-39df-4c6d-904c-52fbdf58bb2e" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="400,219" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_2" InformativeScreenshot="b08a6db8d1418a98a2d54f0dd15f9f18" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
+                                  <p:CvClickWithDescriptor.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </p:CvClickWithDescriptor.CursorPosition>
+                                  <p:CvClickWithDescriptor.DesignTimeDescriptor>
+                                    <uc:CvDescriptor Id="8eb8b55c-7c6b-4888-86ac-e9aa5293cdcb">
+                                      <uc:CvDescriptor.Target>
+                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="120, 489, 119, 12" ElementType="Text" Text="Proceso de escrituracion" />
+                                      </uc:CvDescriptor.Target>
+                                    </uc:CvDescriptor>
+                                  </p:CvClickWithDescriptor.DesignTimeDescriptor>
+                                  <p:CvClickWithDescriptor.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="8bea2c35-9f9e-49e3-bc70-eb955ba2ecf4">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </p:CvClickWithDescriptor.Target>
+                                </p:CvClickWithDescriptor>
+                                <p:CvClickWithDescriptor DelayMS="{x:Null}" DelayScreenshotAfterScroll="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="2000" Descriptor="[&quot;Target: Text 'Reporte de Escrituracion' (383,645,120,13)&quot;]" DesignTimeCacheId="28ea36a4-39df-4c6d-904c-52fbdf58bb2e" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="400,210" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_3" InformativeScreenshot="b0f42b446b657962a486c3565948373f" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
+                                  <p:CvClickWithDescriptor.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </p:CvClickWithDescriptor.CursorPosition>
+                                  <p:CvClickWithDescriptor.DesignTimeDescriptor>
+                                    <uc:CvDescriptor Id="b927e8c9-4f25-4a77-b90a-8242e8e73324">
+                                      <uc:CvDescriptor.Target>
+                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="383, 645, 120, 13" ElementType="Text" Text="Reporte de Escrituracion" />
+                                      </uc:CvDescriptor.Target>
+                                    </uc:CvDescriptor>
+                                  </p:CvClickWithDescriptor.DesignTimeDescriptor>
+                                  <p:CvClickWithDescriptor.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="e0bce9bf-177b-40a9-a747-c5c8b5ae378c">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </p:CvClickWithDescriptor.Target>
+                                </p:CvClickWithDescriptor>
+                              </Sequence>
+                            </ActivityAction>
+                          </p:CVScope.Body>
+                          <p:CVScope.DesignTimeCache>
+                            <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" DataSent="False" />
+                          </p:CVScope.DesignTimeCache>
+                          <p:CVScope.DesignTimeCacheContainer>
+                            <uc:CvCacheContainer>
+                              <uc:CvCacheContainer.Caches>
+                                <scg:List x:TypeArguments="uc:CVCache" Capacity="2">
+                                  <uc:CVCache DataSent="False" DisplayName="Screen CV Click - 'Reportes' (Main)" Id="586e48c9-6a7e-4c91-b49d-86f168d3f3ca" InformativeScreenshot="0c0cfbfeff873a5e0c537d57b81738c5" LogicalPosition="1912, -8" OcrText="Sistema de Comercializacion de Vivienda DESARROLLOS INMOBILIARIOS GTH, S.A DE C.V. _ X Maestros Procesos Diarios Comisiones Consultas Reportes Configura Ayuda Ventana Salir Listo" Position="1912, -8" ScreenshotGuid="ff0ca696-023d-433a-a161-daf1c0a3f96a" ServerVersion="0">
+                                    <uc:CVCache.CvAnchorRelations>
+                                      <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="0" />
+                                    </uc:CVCache.CvAnchorRelations>
+                                    <uc:CVCache.CvUiElements>
+                                      <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="16">
+                                        <uc:CvElementInfo Category="MaximizeButton" Region="1844, 0, 30, 21" />
+                                        <uc:CvElementInfo Category="MinimizeButton" Region="1816, 0, 31, 21" />
+                                        <uc:CvElementInfo Category="Icon" Region="0, 2, 19, 18" />
+                                        <uc:CvElementInfo Category="Icon" Region="18, 47, 22, 21" />
+                                        <uc:CvElementInfo Category="Icon" Region="46, 47, 21, 20" />
+                                        <uc:CvElementInfo Category="CloseButton" Region="1871, 0, 48, 21" />
+                                        <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="42, 44, 30, 25" />
+                                        <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="0, 66, 1917, 949" />
+                                        <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="0, 46, 11, 22" />
+                                        <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1844, 0, 28, 20" />
+                                        <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1871, 0, 48, 20" />
+                                        <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="5, 24, 60, 18" />
+                                        <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="1, 1025, 21, 15" />
+                                        <uc:CvElementInfo Category="CheckBox" Confidence="Runtime" Region="1, 3, 17, 16" />
+                                        <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="14, 45, 29, 24" />
+                                      </scg:List>
+                                    </uc:CVCache.CvUiElements>
+                                    <uc:CVCache.OcrTexts>
+                                      <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="24">
+                                        <uc:OcrTextInfo Region="577, 4, 54, 14" Text="Sistema" />
+                                        <uc:OcrTextInfo Region="634, 4, 18, 14" Text="de" />
+                                        <uc:OcrTextInfo Region="654, 4, 116, 14" Text="Comercializacion" />
+                                        <uc:OcrTextInfo Region="773, 4, 19, 14" Text="de" />
+                                        <uc:OcrTextInfo Region="793, 4, 59, 14" Text="Vivienda" />
+                                        <uc:OcrTextInfo Region="1018, 4, 102, 14" Text="DESARROLLOS" />
+                                        <uc:OcrTextInfo Region="1122, 4, 107, 14" Text="INMOBILIARIOS" />
+                                        <uc:OcrTextInfo Region="1230, 4, 35, 16" Text="GTH," />
+                                        <uc:OcrTextInfo Region="1267, 4, 23, 14" Text="S.A" />
+                                        <uc:OcrTextInfo Region="1292, 4, 21, 14" Text="DE" />
+                                        <uc:OcrTextInfo Region="1314, 4, 27, 15" Text="C.V." />
+                                        <uc:OcrTextInfo Region="1824, 1, 13, 13" Text="_" />
+                                        <uc:OcrTextInfo Region="1888, 3, 12, 11" Text="X" />
+                                        <uc:OcrTextInfo Region="9, 26, 46, 11" Text="Maestros" />
+                                        <uc:OcrTextInfo Region="71, 26, 45, 11" Text="Procesos" />
+                                        <uc:OcrTextInfo Region="117, 26, 34, 11" Text="Diarios" />
+                                        <uc:OcrTextInfo Region="169, 26, 55, 11" Text="Comisiones" />
+                                        <uc:OcrTextInfo Region="242, 25, 49, 12" Text="Consultas" />
+                                        <uc:OcrTextInfo Region="307, 26, 46, 13" Text="Reportes" />
+                                        <uc:OcrTextInfo Region="368, 25, 49, 14" Text="Configura" />
+                                        <uc:OcrTextInfo Region="432, 25, 33, 14" Text="Ayuda" />
+                                        <uc:OcrTextInfo Region="481, 26, 42, 11" Text="Ventana" />
+                                        <uc:OcrTextInfo Region="536, 25, 22, 12" Text="Salir" />
+                                        <uc:OcrTextInfo Region="1, 1026, 24, 11" Text="Listo" />
+                                      </scg:List>
+                                    </uc:CVCache.OcrTexts>
+                                  </uc:CVCache>
+                                  <uc:CVCache DataSent="False" DisplayName="Screen CV Click - 'Proceso de " Id="28ea36a4-39df-4c6d-904c-52fbdf58bb2e" InformativeScreenshot="dba4e525037ce6554629abc2520ca6dc" LogicalPosition="1912, -8" OcrText="Sistema de Comercializacion de Vivienda DESARROLLOS INMOBILIARIOS GTH, S.A DE C.V. _ X Maestros Procesos Diarios Comisiones Consultas Reportes Configura Ayuda Ventana Salir ABC Clientes Bitacora de Clientes Seguimiento de Clientes Seguimiento Expediente Asignacion Ubicaciones Asignacion de Clientes - Paquetes Cancelacion Cliente Rechazo Cliente Reestructuracion de Planes de Vta Cambio de Plan de Venta Cambio de Desarrollo Impresion Oferta de Compra Impresion de PAGARE Impresion Fichas de Deposito Impresion Etiquetas Impresion de Contrato de Contado Impresion Orden de Contrato I Impresion de Contratos CPS Proceso de escrituracion Escrituracion Devoluciones de Clientes Cancela Escrituracion ABC a Tipos de Procesos Relacion Tipo Proceso - Poliza Generacion de Poliza Des-Generacion de Poliza ! Reporte de Escrituracion Impresion de PAGARE Ready" Position="1912, -8" ScreenshotGuid="99214bca-65b8-48c2-a8d2-d0318498586d" ServerVersion="0">
+                                    <uc:CVCache.CvAnchorRelations>
+                                      <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="0" />
+                                    </uc:CVCache.CvAnchorRelations>
+                                    <uc:CVCache.CvUiElements>
+                                      <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="32">
+                                        <uc:CvElementInfo Category="MaximizeButton" Region="1844, 0, 30, 21" />
+                                        <uc:CvElementInfo Category="MinimizeButton" Region="1816, 0, 31, 21" />
+                                        <uc:CvElementInfo Category="Icon" Region="18, 47, 21, 20" />
+                                        <uc:CvElementInfo Category="Icon" Region="0, 2, 19, 17" />
+                                        <uc:CvElementInfo Category="Button" Region="62, 22, 98, 21" />
+                                        <uc:CvElementInfo Category="CloseButton" Region="1871, 0, 49, 21" />
+                                        <uc:CvElementInfo Category="Icon" Region="46, 47, 16, 21" />
+                                        <uc:CvElementInfo Category="Icon" Region="65, 510, 20, 23" />
+                                        <uc:CvElementInfo Category="Button" Region="1, 22, 61, 23" />
+                                        <uc:CvElementInfo Category="Icon" Region="328, 666, 19, 23" />
+                                        <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="88, 486, 24, 23" />
+                                        <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="87, 484, 238, 25" />
+                                        <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="66, 497, 17, 14" />
+                                        <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="66, 487, 18, 23" />
+                                        <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="77, 508, 249, 28" />
+                                        <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="330, 608, 17, 62" />
+                                        <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="67, 452, 16, 29" />
+                                        <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="161, 22, 69, 21" />
+                                        <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="370, 599, 196, 39" />
+                                        <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="330, 607, 16, 31" />
+                                        <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1871, 0, 48, 21" />
+                                        <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="70, 478, 13, 11" />
+                                        <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="326, 599, 23, 90" />
+                                        <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="62, 25, 11, 16" />
+                                        <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="67, 487, 17, 23" />
+                                        <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1844, 0, 29, 20" />
+                                        <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="45, 46, 18, 22" />
+                                        <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="0, 47, 11, 23" />
+                                      </scg:List>
+                                    </uc:CVCache.CvUiElements>
+                                    <uc:CVCache.OcrTexts>
+                                      <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="117">
+                                        <uc:OcrTextInfo Region="577, 4, 54, 14" Text="Sistema" />
+                                        <uc:OcrTextInfo Region="634, 4, 18, 14" Text="de" />
+                                        <uc:OcrTextInfo Region="654, 4, 116, 14" Text="Comercializacion" />
+                                        <uc:OcrTextInfo Region="773, 4, 19, 14" Text="de" />
+                                        <uc:OcrTextInfo Region="793, 4, 59, 14" Text="Vivienda" />
+                                        <uc:OcrTextInfo Region="1018, 4, 102, 14" Text="DESARROLLOS" />
+                                        <uc:OcrTextInfo Region="1122, 4, 107, 14" Text="INMOBILIARIOS" />
+                                        <uc:OcrTextInfo Region="1230, 4, 35, 16" Text="GTH," />
+                                        <uc:OcrTextInfo Region="1267, 4, 23, 14" Text="S.A" />
+                                        <uc:OcrTextInfo Region="1292, 4, 21, 14" Text="DE" />
+                                        <uc:OcrTextInfo Region="1314, 4, 27, 15" Text="C.V." />
+                                        <uc:OcrTextInfo Region="1824, 1, 14, 13" Text="_" />
+                                        <uc:OcrTextInfo Region="1888, 3, 12, 11" Text="X" />
+                                        <uc:OcrTextInfo Region="9, 26, 46, 11" Text="Maestros" />
+                                        <uc:OcrTextInfo Region="71, 26, 45, 11" Text="Procesos" />
+                                        <uc:OcrTextInfo Region="116, 25, 35, 12" Text="Diarios" />
+                                        <uc:OcrTextInfo Region="169, 26, 55, 11" Text="Comisiones" />
+                                        <uc:OcrTextInfo Region="242, 26, 49, 11" Text="Consultas" />
+                                        <uc:OcrTextInfo Region="307, 26, 46, 13" Text="Reportes" />
+                                        <uc:OcrTextInfo Region="368, 25, 49, 14" Text="Configura" />
+                                        <uc:OcrTextInfo Region="432, 25, 33, 14" Text="Ayuda" />
+                                        <uc:OcrTextInfo Region="481, 26, 42, 11" Text="Ventana" />
+                                        <uc:OcrTextInfo Region="536, 25, 22, 12" Text="Salir" />
+                                        <uc:OcrTextInfo Region="120, 50, 22, 11" Text="ABC" />
+                                        <uc:OcrTextInfo Region="143, 49, 40, 12" Text="Clientes" />
+                                        <uc:OcrTextInfo Region="120, 73, 41, 12" Text="Bitacora" />
+                                        <uc:OcrTextInfo Region="162, 73, 14, 12" Text="de" />
+                                        <uc:OcrTextInfo Region="177, 73, 40, 12" Text="Clientes" />
+                                        <uc:OcrTextInfo Region="120, 98, 60, 13" Text="Seguimiento" />
+                                        <uc:OcrTextInfo Region="181, 97, 14, 12" Text="de" />
+                                        <uc:OcrTextInfo Region="196, 97, 40, 12" Text="Clientes" />
+                                        <uc:OcrTextInfo Region="120, 122, 60, 13" Text="Seguimiento" />
+                                        <uc:OcrTextInfo Region="181, 121, 56, 14" Text="Expediente" />
+                                        <uc:OcrTextInfo Region="120, 145, 53, 14" Text="Asignacion" />
+                                        <uc:OcrTextInfo Region="174, 145, 58, 12" Text="Ubicaciones" />
+                                        <uc:OcrTextInfo Region="120, 170, 53, 13" Text="Asignacion" />
+                                        <uc:OcrTextInfo Region="174, 169, 14, 12" Text="de" />
+                                        <uc:OcrTextInfo Region="189, 169, 40, 12" Text="Clientes" />
+                                        <uc:OcrTextInfo Region="230, 171, 6, 9" Text="-" />
+                                        <uc:OcrTextInfo Region="237, 170, 47, 13" Text="Paquetes" />
+                                        <uc:OcrTextInfo Region="120, 193, 59, 12" Text="Cancelacion" />
+                                        <uc:OcrTextInfo Region="180, 193, 35, 12" Text="Cliente" />
+                                        <uc:OcrTextInfo Region="120, 217, 43, 12" Text="Rechazo" />
+                                        <uc:OcrTextInfo Region="164, 217, 35, 12" Text="Cliente" />
+                                        <uc:OcrTextInfo Region="120, 245, 84, 12" Text="Reestructuracion" />
+                                        <uc:OcrTextInfo Region="205, 245, 14, 12" Text="de" />
+                                        <uc:OcrTextInfo Region="220, 245, 33, 12" Text="Planes" />
+                                        <uc:OcrTextInfo Region="254, 245, 14, 12" Text="de" />
+                                        <uc:OcrTextInfo Region="269, 246, 18, 11" Text="Vta" />
+                                        <uc:OcrTextInfo Region="120, 269, 37, 12" Text="Cambio" />
+                                        <uc:OcrTextInfo Region="158, 269, 14, 12" Text="de" />
+                                        <uc:OcrTextInfo Region="173, 269, 22, 12" Text="Plan" />
+                                        <uc:OcrTextInfo Region="196, 269, 14, 12" Text="de" />
+                                        <uc:OcrTextInfo Region="211, 270, 30, 11" Text="Venta" />
+                                        <uc:OcrTextInfo Region="120, 293, 37, 12" Text="Cambio" />
+                                        <uc:OcrTextInfo Region="158, 293, 14, 12" Text="de" />
+                                        <uc:OcrTextInfo Region="173, 293, 50, 12" Text="Desarrollo" />
+                                        <uc:OcrTextInfo Region="120, 321, 49, 14" Text="Impresion" />
+                                        <uc:OcrTextInfo Region="170, 321, 34, 12" Text="Oferta" />
+                                        <uc:OcrTextInfo Region="205, 321, 14, 12" Text="de" />
+                                        <uc:OcrTextInfo Region="220, 322, 39, 13" Text="Compra" />
+                                        <uc:OcrTextInfo Region="120, 345, 49, 14" Text="Impresion" />
+                                        <uc:OcrTextInfo Region="170, 345, 14, 12" Text="de" />
+                                        <uc:OcrTextInfo Region="186, 343, 41, 14" Text="PAGARE" />
+                                        <uc:OcrTextInfo Region="120, 369, 49, 14" Text="Impresion" />
+                                        <uc:OcrTextInfo Region="170, 369, 32, 12" Text="Fichas" />
+                                        <uc:OcrTextInfo Region="203, 369, 14, 12" Text="de" />
+                                        <uc:OcrTextInfo Region="218, 370, 44, 13" Text="Deposito" />
+                                        <uc:OcrTextInfo Region="120, 393, 49, 14" Text="Impresion" />
+                                        <uc:OcrTextInfo Region="170, 394, 47, 13" Text="Etiquetas" />
+                                        <uc:OcrTextInfo Region="120, 417, 49, 14" Text="Impresion" />
+                                        <uc:OcrTextInfo Region="170, 417, 14, 12" Text="de" />
+                                        <uc:OcrTextInfo Region="185, 418, 45, 11" Text="Contrato" />
+                                        <uc:OcrTextInfo Region="231, 417, 14, 12" Text="de" />
+                                        <uc:OcrTextInfo Region="246, 417, 43, 12" Text="Contado" />
+                                        <uc:OcrTextInfo Region="120, 441, 49, 14" Text="Impresion" />
+                                        <uc:OcrTextInfo Region="170, 441, 32, 12" Text="Orden" />
+                                        <uc:OcrTextInfo Region="203, 441, 14, 12" Text="de" />
+                                        <uc:OcrTextInfo Region="218, 442, 45, 11" Text="Contrato" />
+                                        <uc:OcrTextInfo Region="66, 449, 17, 63" Text="I" />
+                                        <uc:OcrTextInfo Region="120, 465, 49, 14" Text="Impresion" />
+                                        <uc:OcrTextInfo Region="170, 465, 14, 12" Text="de" />
+                                        <uc:OcrTextInfo Region="185, 466, 50, 11" Text="Contratos" />
+                                        <uc:OcrTextInfo Region="236, 466, 21, 11" Text="CPS" />
+                                        <uc:OcrTextInfo Region="120, 490, 40, 11" Text="Proceso" />
+                                        <uc:OcrTextInfo Region="161, 489, 14, 12" Text="de" />
+                                        <uc:OcrTextInfo Region="176, 490, 63, 11" Text="escrituracion" />
+                                        <uc:OcrTextInfo Region="383, 489, 63, 12" Text="Escrituracion" />
+                                        <uc:OcrTextInfo Region="120, 513, 65, 12" Text="Devoluciones" />
+                                        <uc:OcrTextInfo Region="186, 513, 14, 12" Text="de" />
+                                        <uc:OcrTextInfo Region="201, 513, 40, 12" Text="Clientes" />
+                                        <uc:OcrTextInfo Region="383, 513, 40, 12" Text="Cancela" />
+                                        <uc:OcrTextInfo Region="424, 513, 63, 12" Text="Escrituracion" />
+                                        <uc:OcrTextInfo Region="383, 542, 22, 11" Text="ABC" />
+                                        <uc:OcrTextInfo Region="407, 544, 7, 9" Text="a" />
+                                        <uc:OcrTextInfo Region="415, 542, 27, 13" Text="Tipos" />
+                                        <uc:OcrTextInfo Region="443, 541, 14, 12" Text="de" />
+                                        <uc:OcrTextInfo Region="458, 542, 45, 11" Text="Procesos" />
+                                        <uc:OcrTextInfo Region="383, 565, 42, 12" Text="Relacion" />
+                                        <uc:OcrTextInfo Region="426, 566, 22, 13" Text="Tipo" />
+                                        <uc:OcrTextInfo Region="449, 566, 40, 11" Text="Proceso" />
+                                        <uc:OcrTextInfo Region="490, 567, 6, 9" Text="-" />
+                                        <uc:OcrTextInfo Region="497, 565, 29, 12" Text="Poliza" />
+                                        <uc:OcrTextInfo Region="383, 593, 56, 12" Text="Generacion" />
+                                        <uc:OcrTextInfo Region="440, 593, 14, 12" Text="de" />
+                                        <uc:OcrTextInfo Region="455, 593, 29, 12" Text="Poliza" />
+                                        <uc:OcrTextInfo Region="383, 617, 78, 12" Text="Des-Generacion" />
+                                        <uc:OcrTextInfo Region="462, 617, 14, 12" Text="de" />
+                                        <uc:OcrTextInfo Region="477, 617, 29, 12" Text="Poliza" />
+                                        <uc:OcrTextInfo Region="329, 605, 17, 83" Text="!" />
+                                        <uc:OcrTextInfo Region="383, 646, 41, 13" Text="Reporte" />
+                                        <uc:OcrTextInfo Region="425, 645, 14, 12" Text="de" />
+                                        <uc:OcrTextInfo Region="440, 645, 63, 12" Text="Escrituracion" />
+                                        <uc:OcrTextInfo Region="384, 670, 48, 13" Text="Impresion" />
+                                        <uc:OcrTextInfo Region="433, 669, 14, 12" Text="de" />
+                                        <uc:OcrTextInfo Region="448, 667, 42, 14" Text="PAGARE" />
+                                        <uc:OcrTextInfo Region="1, 1026, 33, 13" Text="Ready" />
+                                      </scg:List>
+                                    </uc:CVCache.OcrTexts>
+                                  </uc:CVCache>
+                                </scg:List>
+                              </uc:CvCacheContainer.Caches>
+                            </uc:CvCacheContainer>
+                          </p:CVScope.DesignTimeCacheContainer>
+                          <p:CVScope.OCREngine>
+                            <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                              <ActivityFunc.Argument>
+                                <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                              </ActivityFunc.Argument>
+                              <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="400,25" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_2" Image="[Image]" Language="en" NoopExecution="False" Profile="Screen" Scale="1" Timeout="100000" />
+                            </ActivityFunc>
+                          </p:CVScope.OCREngine>
+                          <p:CVScope.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="edf54c43-b018-4915-9489-f3e398177cf9" InformativeScreenshot="173090db153dd11956cfcfe4462c12d5" WaitForReady="INTERACTIVE">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                            </ui:Target>
+                          </p:CVScope.Target>
+                          <p:CVScope.UseLocalServer>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </p:CVScope.UseLocalServer>
+                        </p:CVScope>
+                      </Sequence>
+                    </ActivityAction>
+                  </uix:NApplicationCard.Body>
+                  <uix:NApplicationCard.TargetApp>
+                    <uix:TargetApp Area="1912, -8, 1936, 1056" FilePath="E:\EnkontrolV9\Aplicaciones_V9\Vivienda\smcte.exe" IconBase64="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" InformativeScreenshot="efe017ab23b92b909515f11a5d511352.png" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='10.112.20.12 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='smcte.exe' cls='FNWND*' title='Sistema de Comercialización de Vivienda                         *' /&gt;" Title="Sistema de Comercialización de Vivienda                         *" />
+                  </uix:NApplicationCard.TargetApp>
+                </uix:NApplicationCard>
+              </Sequence>
+              <Sequence DisplayName="Obtener el reporte" sap:VirtualizedContainerService.HintSize="484,194" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Sequence DisplayName="Inicializar dias" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[strFechaIni]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[New DateTime(Now.Year, Now.Month, 1).ToString("dd/MM/yyyy")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[strFechaFinal]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[New DateTime(Now.Year, Now.Month, DateTime.DaysInMonth(Now.Year, Now.Month)).ToString("dd/MM/yyyy")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Remote Desktop: Reporte de Escrituración     [W_SMC260]" sap:VirtualizedContainerService.HintSize="450,50" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="60130ab7-f1cb-42b1-8ed2-1acd2fa239fa" Timeout="60" Version="V2">
+                  <uix:NApplicationCard.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,1372" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="6439e464-0e3c-4c47-a580-040dee77a181" DisplayName="CV Screen Scope 'FNWND3115'" sap:VirtualizedContainerService.HintSize="434,1310" sap2010:WorkflowViewState.IdRef="CVScope_3" SendOnPremData="False" Version="V6">
+                          <p:CVScope.Body>
+                            <ActivityAction x:TypeArguments="x:Object">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="2000" Descriptor="[&quot;Target: Text '01/09/2025' (238,226,57,11)&quot;]" DesignTimeCacheId="6439e464-0e3c-4c47-a580-040dee77a181" DesignTimeScaleFactor="1" DisplayName="CV Type Into - Text" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,219" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_4" InformativeScreenshot="14c0e9c2689628587d8c82696c7d292e" NumberOfScrolls="2" ScrollDirection="None" Text="[strFechaIni]" Version="V6">
+                                  <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
+                                    <uc:CvDescriptor Id="1df50c07-d2fc-4ad2-8e57-c05790e50a0c">
+                                      <uc:CvDescriptor.Target>
+                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="238, 226, 57, 11" ElementType="Text" Text="01/09/2025" />
+                                      </uc:CvDescriptor.Target>
+                                    </uc:CvDescriptor>
+                                  </p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
+                                  <p:CvTypeIntoWithDescriptor.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="8ac82e05-313c-4a4c-ae26-3ed4a3d754c2">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </p:CvTypeIntoWithDescriptor.Target>
+                                </p:CvTypeIntoWithDescriptor>
+                                <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="2000" Descriptor="[&quot;Target: Text '15/09/2025' (376,226,56,11)&quot;]" DesignTimeCacheId="6439e464-0e3c-4c47-a580-040dee77a181" DesignTimeScaleFactor="1" DisplayName="CV Type Into - Text" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,219" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_5" InformativeScreenshot="dee4855ea67db2e0e34c295027dfdb3a" NumberOfScrolls="2" ScrollDirection="None" Text="[strFechaFinal]" Version="V6">
+                                  <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
+                                    <uc:CvDescriptor Id="1013bbc5-48f3-4450-b879-ec03acbd00a9">
+                                      <uc:CvDescriptor.Target>
+                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="376, 226, 56, 11" ElementType="Text" Text="15/09/2025" />
+                                      </uc:CvDescriptor.Target>
+                                    </uc:CvDescriptor>
+                                  </p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
+                                  <p:CvTypeIntoWithDescriptor.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2a77a22f-7327-48f9-b534-47089f12b269">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </p:CvTypeIntoWithDescriptor.Target>
+                                </p:CvTypeIntoWithDescriptor>
+                                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBefore="2" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="400,212" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" Shortcuts="[d(hk)][k(f5)][u(hk)]" Version="V3" />
+                                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBefore="3" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="400,212" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_5" Shortcuts="[d(hk)][k(f4)][u(hk)]" Version="V3" />
+                                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Dar click en SI exportar a Excel" sap:VirtualizedContainerService.HintSize="400,57" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" ScopeGuid="201fcb32-1fc3-4cc6-8476-2cd174a9b579" Timeout="60" Version="V2">
+                                  <uix:NApplicationCard.Body>
+                                    <ActivityAction x:TypeArguments="x:Object">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,245" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="416,183" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="201fcb32-1fc3-4cc6-8476-2cd174a9b579" Version="V3">
+                                          <uix:NClick.Target>
+                                            <uix:TargetAnchorable CvElementArea="44, 121, 90, 27" CvTextArea="83, 128, 12, 13" CvTextArgument="Si" CvType="Button" DesignTimeRectangle="45, 122, 88, 26" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd ctrlid='6' title='&amp;amp;Sí' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='6' title='&amp;amp;Sí' check:text='unchecked' /&gt;" Guid="eaa95fb4-ad4b-4cc4-b1d9-e71c06367f7e" InformativeScreenshot="0b0e2e1e3b0335e716a5f53900db0a0a.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='10.112.20.12 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='smcte.exe' cls='#32770' title='Opciones de Exportación' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                                          </uix:NClick.Target>
+                                        </uix:NClick>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </uix:NApplicationCard.Body>
+                                  <uix:NApplicationCard.TargetApp>
+                                    <uix:TargetApp Area="2715, 465, 339, 162" FilePath="E:\EnkontrolV9\Aplicaciones_V9\Vivienda\smcte.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAowSURBVFhHtVcJUFRXFv1OyixqjBpj1AgSs5hMjSalmSRmHJeMJhWTzIyjSU1lqaxDJnE0ijHRgEGRBgIKSAfohU12sIFuaOgFGppuoKG76WbtZgcxKAguxKBEljP3fZqKPWbGqamaW3Xq/f68/8559553/4e7ORKk0rsrjOUfWMymD01VxlerTRVPWi0mD9ef//9RkJcbqSvWjFcYS2A1l/9ot1X219urWutspnq7zVRJkNlqq0W11uqDVkv1uyRuK2EtYRVhKWGxa6n/LVQFCllGWi6WPXoC6zYn4Y13FPD+XIEjQUrEndJAqTKgsrIKNmvlhK225kqDveZcQ53ZQTDbbRY1CUshYSk0xtVaa/yt1uq9JOpNwuuEzQQm9mEX3a2hVuYbo6IycM+9QnB3ZoO7qxDcrFJw80zgltZhzqNtWLz6DF75qBdx2b1IV3QjU9mDPLUTOkMTTFYHLPYWWO3Nkw0NDVecjsYeZ3N9VYujvqi1tTnP4WhKrDZV/slFd2toigqcPgeScPdsErAwC9xiEvCQHtwyCziPVhrP0v3LWLNzEs2dQPv3gNkJGOuBktoxqM0/Id90A9n6EWSUDCKn7DzUpgGoq/rh7OjHhYFzSEpKOpOVlTXXRekemsL886/vEOOuWSTg/gxwDxbQznVEXg3OqxncI13glg/AY+M1VBHpxWGg7wJwbpBwiXCRftP4/RDQTffbzgHNvUCuaQwG+xDOdLciNlY0KBaLbxWgyM2ZV6xSXnp+QyzuvPs7cAvSwC2Sk4AS2nkVCagnAe00nscdv/4BiXlTxG1EwIOy0U6EXeeBHiI/S3/rI0EXSGR1C+DovAy7zUwCYptclO6h02pWa4uU19dvEWPpyiRwswkP5IBboiEBRnCeNnAPt5AIKoPnJewR3EAHETd2APWEBipJYzehZ2rXzrNTojr7gULzBFq6hlCq07IMlLgo3cNQptuZL8/HcxslePkvCnBzEigLZMRpH3iaSUDTVBmWXsCL742gpoE80AyYGmmXNNaQH2pot5Y2wNoO2Jg4EpRe9hOcZBiFIgciUWyWi9I9qoz6w7JsOZ5+VowPP9Pifi/KwJxkKkMeZYHKwHywnMqwgsrwUB9WbBlGXukkjDag1EywAno7oQ4oJ38YSFRFE40kLEE9go7OLmRmZpAA0UkXpXtU6HVJWRn5WLVWBO/dGjy7KZOOoYjMmOoqhXqqFMvtNLZg9uo+RCaPQlMxCUXZJPL1kygwAsoKSnkVUFQNaC2Agq4TCofR3dWOlJQUJmCPi9I9jHqdPiE+G088FYN3Py7Atp1yzJgbA25uIh09OhFMxINUjqVlhEoSYcPuI/04rfoRyfIRpMhHkVpwA2nKMaQXTSBDBci0QLycBOReRnengx3BcRKw0UXpHoZSrVMgOIVHfhON7X+V4bU3crHAU0JmjHVlgfywiLyxmEy5xEDXJmz37kZ81hVEJxNSriImbQSxGaMQZf0EcfYYEmQTCE0gEdmD6GxrQEJCwohEIpnnonSPUq1q4LNdEqx4MgZbXk3Di9vS8NjTtHvWlOaRIfksyCgLyilPLCzHuu0OhIoGERQzRLiEYNEwgsVXESodQVjcNYQnjuLQiRtIye2Bs9mKuDjpZRede3R3diygHnB1+85YeD7+HZ75XTyZUYIn1sRj5gLqCXMoC/NPkYCbRNyvwWPrLfgisBdfCPoI/TgQfAFfhgzhYOglHDp+Bb4RV+Ht9wMK1O2wmMtBDajXRekeTkfTE0UF8rFn1kVg6YoorFwVC6+VQngS5iyOoiwQ7hPTsaRTsZDMyfwwX45Fq/R4d08LPjrQgQ+/6MbHX53Fxwf74P31eXziN0Dkg3hr7wDKjE5UGIuZgBoXpXuc6e7YKpfJsGh5CBZ5RpKIk3jAIxzzl4Rh1sIwcPeGkxkpE/eRJ5iIB0jE/NO416sIr7xtww7vRmz/mxM7PmmDz2EjfI+m4tDXIdi37wAPgSAYEnEspBKp1UXpHo4G+56M1CzM+NU3mDEjEHfMCcHMuUE0CuhtGEgZCHKJYH4gEfNJxPx0zFySg9++pMeLO0zY8VElvvRNREBAEMQSCQoLC2E2m3mwa3bv2LHAibCwsMK0tLS1LuqpsJgqw1JPpUIozKdJ+XjjrWR4PX4SHBdAOErwJxwDNzOUBEWSEOoP89jxTMfDa5R4aYcKPl9GISpKiNbWVoyMjGBiYgKTk5MYHx/H9evXMTg4CHpF83MEAkG1m4j05JSvoyPCkZ0jQpE2FSXaQpTp9DQaIY3TYPe+PLz8SjKWP0ZmvIcJiyCQL6hR3eeVjl17Y/iFBwYGeNKbg5FfvDgEoSoWjvZOtDidNPc7sEy46DlOGBGxVnDk6FeCQP/M8BPBXSLhybG802koLc5HlUGFKqMGFYZiqNUlkOXoIYzWEakKL2zNo36RiqNHBfzObyaf3nk/ifKX+WK9ZC6CFUlob2uDyWRi5bgRHxf/qUvCz7Hp95vv9Fi2zGPTho3Pf/Dee5/5HTqYFBVxwpYojh5KTYhF+qloKHIToSnMgVatglQs5evL0s5iOu0jI9cxdPEiDmf64jnhXHwjSyaRbWhsbITNVss/ExZ6UxZuFxvXb1j22rZtf/b388uJPHEc4aEhEIZ/iyP+/rzJpmuuMCmQZpRheHiYXtfnsCFiJTZHbIG1roGIbfzuy8rK+GcO+x3+5b7wr7FmzZpVb7399klBUFCdVCq9TB8V8Cfiw75+8NnnwzudkY+NjeGT7H9gS+JCxKiT0NHRAXWlGS98uxpbj7+OEkMFjEYjiouL+Wfo2VEXxS+Hj4/PrP3792+TyWTXmOqioiLk5uaCfiM9PR3R0THY77OfX4ylfXR0FOcHh/BOyt+xQTIPIafDeecXlpuwNuAP2Cs+Tl/VlSgtLb29AIPBMIMIj+j1ejCwh8rLy/kFampqeFRUVCDwWCCfTmY4lnZ2Etq7uvHH2E1YR7WX5qbwda+01qG+vp4+y2yopjLctgRqtdpLpVJBo9FAp9Px5FVV9D8BLdDc3MyjtrYWcdI43lAX6Jwz8q6uLvinHMPa47PxqWQ36urq4GxpQRu5v729nT8tTMhtTUh924ORs9RPk1utVjgcDnR2dvJg6VUVqaixBPHXvWfOICRThKdC7oF3zC4001xGzub29PTg7Pdn0dvby6/zb4/hzUHv7/cZMasXg91uh5MaCTMXW7SpqYlfjH3pCIXRlBUHzLV18EsU8pmaJmekLDt95/r4LLC5bo3oP0V0dPQuqv8g2yEjZwuwNDMRTAArA/sbfenwHY4dM4vFwgtm5B00nwlg85lYRn5LK75dREZGesjlcj9avJp2doXqP0a1nKRyTNLvSVp4vKSk5JpQKLxKqR1n9WUmm84cu2b3WNp/8WX03wSl+Q6tVvuIUql8Mycnx48MKiCPBGdmZgaFh4f7BwQEvO/r67uKTPk5MxdzODtmDOya3bu15hz3T1/5uZ1vLWjEAAAAAElFTkSuQmCC" InformativeScreenshot="81ecd87411b80d12a76c6633fc24000c.png" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='10.112.20.12 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='smcte.exe' cls='#32770' title='Opciones de Exportación' /&gt;" Title="Opciones de Exportación" />
+                                  </uix:NApplicationCard.TargetApp>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </uix:NApplicationCard>
+                                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Exportar a Excel" sap:VirtualizedContainerService.HintSize="400,48" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" ScopeGuid="d90da5d9-459b-47b7-96a9-1cba2d7bbdaf" Timeout="60" Version="V2">
+                                  <uix:NApplicationCard.Body>
+                                    <ActivityAction x:TypeArguments="x:Object">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,738" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                        <Sequence.Variables>
+                                          <Variable x:TypeArguments="x:String" Name="strPeriodo" />
+                                        </Sequence.Variables>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Assign sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">[strPeriodo]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">[Now.ToString("MMMM", New System.Globalization.CultureInfo("es-ES")).ToLower() &amp; " " &amp; Now.Year.ToString()]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'Edit'" sap:VirtualizedContainerService.HintSize="434,188" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[&quot;\\tsclient\C\Robot\&quot; &amp; &quot;escrituracion &quot; &amp; strPeriodo]">
+                                          <ui:TypeInto.Target>
+                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2e3eb4ac-1976-4ff0-9fb7-1cec02b1d2c2" InformativeScreenshot="b061b7c4f4afae1d87ff64749e437f16" Selector="&lt;wnd ctrlid='1152' /&gt;">
+                                              <ui:Target.TimeoutMS>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:Target.TimeoutMS>
+                                              <ui:Target.WaitForReady>
+                                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                                              </ui:Target.WaitForReady>
+                                            </ui:Target>
+                                          </ui:TypeInto.Target>
+                                        </ui:TypeInto>
+                                        <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="3" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="434,190" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d90da5d9-459b-47b7-96a9-1cba2d7bbdaf" Version="V3">
+                                          <uix:NClick.Target>
+                                            <uix:TargetAnchorable CvElementArea="377, 204, 76, 24" CvTextArea="393, 209, 41, 12" CvTextArgument="Guardar" CvType="Button" DesignTimeRectangle="377, 205, 75, 23" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Guardar' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Guardar' check:text='unchecked' /&gt;" Guid="1c5ee19b-d39c-404f-9b7c-2649bb83ae56" InformativeScreenshot="d14b6696eaecc22ece6e4776d7d85874.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='10.112.20.12 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='smcte.exe' cls='#32770' title='Guardar Como' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                                          </uix:NClick.Target>
+                                        </uix:NClick>
+                                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="434,183" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d90da5d9-459b-47b7-96a9-1cba2d7bbdaf" Version="V3">
+                                          <uix:NClick.Target>
+                                            <uix:TargetAnchorable CvElementArea="112, 121, 89, 27" CvTextArea="134, 128, 43, 15" CvTextArgument="Aceptar" CvType="Button" DesignTimeRectangle="112, 122, 88, 26" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd ctrlid='2' title='Aceptar' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='2' title='Aceptar' check:text='unchecked' /&gt;" Guid="4559faa7-7d8e-416e-bfd8-fdfe8ea93da9" InformativeScreenshot="2f5a77c99c8ebf3cc5dde32a6b352318.png" ScopeSelectorArgument="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='10.112.20.12 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='smcte.exe' cls='#32770' title='AVISO' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                                          </uix:NClick.Target>
+                                        </uix:NClick>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </uix:NApplicationCard.Body>
+                                  <uix:NApplicationCard.TargetApp>
+                                    <uix:TargetApp Area="1920, 43, 462, 268" FilePath="E:\EnkontrolV9\Aplicaciones_V9\Vivienda\smcte.exe" IconBase64="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" InformativeScreenshot="d95ed3c1cd1f8f41a0fe03d7b4b75cdf.png" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='10.112.20.12 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='smcte.exe' cls='#32770' title='Guardar Como' /&gt;" Title="Guardar Como" />
+                                  </uix:NApplicationCard.TargetApp>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </uix:NApplicationCard>
+                              </Sequence>
+                            </ActivityAction>
+                          </p:CVScope.Body>
+                          <p:CVScope.DesignTimeCache>
+                            <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" DataSent="False" />
+                          </p:CVScope.DesignTimeCache>
+                          <p:CVScope.DesignTimeCacheContainer>
+                            <uc:CvCacheContainer>
+                              <uc:CvCacheContainer.Caches>
+                                <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
+                                  <uc:CVCache DataSent="False" DisplayName="Screen CV Type Into - '01/09/2 (Main)" Id="6439e464-0e3c-4c47-a580-040dee77a181" InformativeScreenshot="09a0ef22e667865d55695b8da5ebcc1b" LogicalPosition="1922, 71" OcrText="Reporte de Escrituracion [W_SMC260] _ X Parametros: Desarrollo Inicial: 201 LA CIENEGA Desarrollo Final: 553 HACIENDA SAN AGUSTIN COMERCIALIZACION Esquema Inicial: 1 INFONAVIT TRADICIONAL Esquema Final: 46 CONTADO EXTERNOS Rango de Fechas de Escrituracion Fecha Inicial: 01/09/2025 Fecha Final: 15/09/2025 Procesados Escriturados Con Poliza Sin Poliza Ambos" Position="1922, 71" ScreenshotGuid="5d649b37-bc69-4d38-abb0-c95dafc5775b" ServerVersion="0">
+                                    <uc:CVCache.CvAnchorRelations>
+                                      <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="16">
+                                        <uc:AnchorRelationInfo IsTargetText="False" Target="6">
+                                          <uc:AnchorRelationInfo.Anchors>
+                                            <x:Array Type="x:Int32">
+                                              <x:Int32>37</x:Int32>
+                                              <x:Int32>38</x:Int32>
+                                            </x:Array>
+                                          </uc:AnchorRelationInfo.Anchors>
+                                        </uc:AnchorRelationInfo>
+                                        <uc:AnchorRelationInfo IsTargetText="False" Target="8">
+                                          <uc:AnchorRelationInfo.Anchors>
+                                            <x:Array Type="x:Int32">
+                                              <x:Int32>44</x:Int32>
+                                              <x:Int32>45</x:Int32>
+                                            </x:Array>
+                                          </uc:AnchorRelationInfo.Anchors>
+                                        </uc:AnchorRelationInfo>
+                                        <uc:AnchorRelationInfo IsTargetText="False" Target="5">
+                                          <uc:AnchorRelationInfo.Anchors>
+                                            <x:Array Type="x:Int32">
+                                              <x:Int32>42</x:Int32>
+                                              <x:Int32>43</x:Int32>
+                                            </x:Array>
+                                          </uc:AnchorRelationInfo.Anchors>
+                                        </uc:AnchorRelationInfo>
+                                        <uc:AnchorRelationInfo IsTargetText="False" Target="14">
+                                          <uc:AnchorRelationInfo.Anchors>
+                                            <x:Array Type="x:Int32">
+                                              <x:Int32>46</x:Int32>
+                                            </x:Array>
+                                          </uc:AnchorRelationInfo.Anchors>
+                                        </uc:AnchorRelationInfo>
+                                        <uc:AnchorRelationInfo IsTargetText="False" Target="3">
+                                          <uc:AnchorRelationInfo.Anchors>
+                                            <x:Array Type="x:Int32">
+                                              <x:Int32>34</x:Int32>
+                                              <x:Int32>35</x:Int32>
+                                            </x:Array>
+                                          </uc:AnchorRelationInfo.Anchors>
+                                        </uc:AnchorRelationInfo>
+                                        <uc:AnchorRelationInfo IsTargetText="False" Target="7">
+                                          <uc:AnchorRelationInfo.Anchors>
+                                            <x:Array Type="x:Int32">
+                                              <x:Int32>22</x:Int32>
+                                              <x:Int32>23</x:Int32>
+                                            </x:Array>
+                                          </uc:AnchorRelationInfo.Anchors>
+                                        </uc:AnchorRelationInfo>
+                                        <uc:AnchorRelationInfo IsTargetText="False" Target="4">
+                                          <uc:AnchorRelationInfo.Anchors>
+                                            <x:Array Type="x:Int32">
+                                              <x:Int32>27</x:Int32>
+                                              <x:Int32>28</x:Int32>
+                                            </x:Array>
+                                          </uc:AnchorRelationInfo.Anchors>
+                                        </uc:AnchorRelationInfo>
+                                        <uc:AnchorRelationInfo IsTargetText="False" Target="12">
+                                          <uc:AnchorRelationInfo.Anchors>
+                                            <x:Array Type="x:Int32">
+                                              <x:Int32>10</x:Int32>
+                                              <x:Int32>11</x:Int32>
+                                            </x:Array>
+                                          </uc:AnchorRelationInfo.Anchors>
+                                        </uc:AnchorRelationInfo>
+                                        <uc:AnchorRelationInfo IsTargetText="False" Target="1">
+                                          <uc:AnchorRelationInfo.Anchors>
+                                            <x:Array Type="x:Int32">
+                                              <x:Int32>15</x:Int32>
+                                              <x:Int32>16</x:Int32>
+                                              <x:Int32>17</x:Int32>
+                                              <x:Int32>18</x:Int32>
+                                            </x:Array>
+                                          </uc:AnchorRelationInfo.Anchors>
+                                        </uc:AnchorRelationInfo>
+                                        <uc:AnchorRelationInfo IsTargetText="False" Target="16">
+                                          <uc:AnchorRelationInfo.Anchors>
+                                            <x:Array Type="x:Int32">
+                                              <x:Int32>24</x:Int32>
+                                              <x:Int32>25</x:Int32>
+                                            </x:Array>
+                                          </uc:AnchorRelationInfo.Anchors>
+                                        </uc:AnchorRelationInfo>
+                                        <uc:AnchorRelationInfo IsTargetText="False" Target="9">
+                                          <uc:AnchorRelationInfo.Anchors>
+                                            <x:Array Type="x:Int32">
+                                              <x:Int32>21</x:Int32>
+                                            </x:Array>
+                                          </uc:AnchorRelationInfo.Anchors>
+                                        </uc:AnchorRelationInfo>
+                                        <uc:AnchorRelationInfo IsTargetText="False" Target="10">
+                                          <uc:AnchorRelationInfo.Anchors>
+                                            <x:Array Type="x:Int32">
+                                              <x:Int32>14</x:Int32>
+                                            </x:Array>
+                                          </uc:AnchorRelationInfo.Anchors>
+                                        </uc:AnchorRelationInfo>
+                                        <uc:AnchorRelationInfo IsTargetText="False" Target="15">
+                                          <uc:AnchorRelationInfo.Anchors>
+                                            <x:Array Type="x:Int32">
+                                              <x:Int32>9</x:Int32>
+                                            </x:Array>
+                                          </uc:AnchorRelationInfo.Anchors>
+                                        </uc:AnchorRelationInfo>
+                                      </scg:List>
+                                    </uc:CVCache.CvAnchorRelations>
+                                    <uc:CVCache.CvUiElements>
+                                      <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="32">
+                                        <uc:CvElementInfo Category="MaximizeButton" Region="629, 9, 20, 19" />
+                                        <uc:CvElementInfo Category="InputBox" Region="222, 123, 257, 18" />
+                                        <uc:CvElementInfo Category="RadioButton" Region="325, 263, 14, 14" />
+                                        <uc:CvElementInfo Category="InputBox" Region="232, 222, 70, 18" />
+                                        <uc:CvElementInfo Category="InputBox" Region="223, 170, 256, 18" />
+                                        <uc:CvElementInfo Category="RadioButton" Region="343, 285, 13, 13" />
+                                        <uc:CvElementInfo Category="InputBox" Region="369, 222, 71, 19" />
+                                        <uc:CvElementInfo Category="InputBox" Region="224, 150, 255, 17" />
+                                        <uc:CvElementInfo Category="RadioButton" Region="343, 301, 13, 13" />
+                                        <uc:CvElementInfo Category="InputBox" Region="182, 149, 41, 18" />
+                                        <uc:CvElementInfo Category="InputBox" Region="182, 121, 40, 19" />
+                                        <uc:CvElementInfo Category="RadioButton" Region="169, 262, 14, 15" />
+                                        <uc:CvElementInfo Category="InputBox" Region="223, 102, 256, 18" />
+                                        <uc:CvElementInfo Category="MinimizeButton" Region="609, 9, 20, 20" />
+                                        <uc:CvElementInfo Category="RadioButton" Region="343, 317, 14, 14" />
+                                        <uc:CvElementInfo Category="InputBox" Region="182, 102, 42, 19" />
+                                        <uc:CvElementInfo Category="InputBox" Region="183, 170, 41, 17" />
+                                        <uc:CvElementInfo Category="CloseButton" Region="649, 9, 20, 19" />
+                                        <uc:CvElementInfo Category="Icon" Region="7, 11, 19, 16" />
+                                      </scg:List>
+                                    </uc:CVCache.CvUiElements>
+                                    <uc:CVCache.OcrTexts>
+                                      <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="47">
+                                        <uc:OcrTextInfo Region="184, 12, 54, 17" Text="Reporte" />
+                                        <uc:OcrTextInfo Region="241, 12, 19, 14" Text="de" />
+                                        <uc:OcrTextInfo Region="262, 12, 85, 14" Text="Escrituracion" />
+                                        <uc:OcrTextInfo Region="366, 12, 84, 16" Text="[W_SMC260]" />
+                                        <uc:OcrTextInfo Region="612, 11, 12, 12" Text="_" />
+                                        <uc:OcrTextInfo Region="652, 13, 12, 10" Text="X" />
+                                        <uc:OcrTextInfo Region="33, 54, 60, 12" Text="Parametros:" />
+                                        <uc:OcrTextInfo Region="98, 106, 50, 11" Text="Desarrollo" />
+                                        <uc:OcrTextInfo Region="150, 107, 30, 10" Text="Inicial:" />
+                                        <uc:OcrTextInfo Region="184, 106, 19, 11" Text="201" />
+                                        <uc:OcrTextInfo Region="225, 106, 15, 11" Text="LA" />
+                                        <uc:OcrTextInfo Region="241, 106, 46, 11" Text="CIENEGA" />
+                                        <uc:OcrTextInfo Region="98, 126, 50, 11" Text="Desarrollo" />
+                                        <uc:OcrTextInfo Region="150, 126, 26, 11" Text="Final:" />
+                                        <uc:OcrTextInfo Region="184, 126, 20, 11" Text="553" />
+                                        <uc:OcrTextInfo Region="225, 126, 53, 11" Text="HACIENDA" />
+                                        <uc:OcrTextInfo Region="279, 126, 23, 11" Text="SAN" />
+                                        <uc:OcrTextInfo Region="302, 126, 48, 11" Text="AGUSTIN" />
+                                        <uc:OcrTextInfo Region="350, 125, 103, 12" Text="COMERCIALIZACION" />
+                                        <uc:OcrTextInfo Region="98, 153, 45, 13" Text="Esquema" />
+                                        <uc:OcrTextInfo Region="145, 153, 30, 11" Text="Inicial:" />
+                                        <uc:OcrTextInfo Region="214, 153, 6, 11" Text="1" />
+                                        <uc:OcrTextInfo Region="225, 153, 54, 11" Text="INFONAVIT" />
+                                        <uc:OcrTextInfo Region="280, 153, 71, 11" Text="TRADICIONAL" />
+                                        <uc:OcrTextInfo Region="98, 173, 45, 13" Text="Esquema" />
+                                        <uc:OcrTextInfo Region="145, 173, 26, 11" Text="Final:" />
+                                        <uc:OcrTextInfo Region="208, 173, 13, 11" Text="46" />
+                                        <uc:OcrTextInfo Region="225, 173, 50, 11" Text="CONTADO" />
+                                        <uc:OcrTextInfo Region="278, 173, 56, 11" Text="EXTERNOS" />
+                                        <uc:OcrTextInfo Region="164, 207, 32, 13" Text="Rango" />
+                                        <uc:OcrTextInfo Region="198, 207, 14, 11" Text="de" />
+                                        <uc:OcrTextInfo Region="213, 207, 37, 11" Text="Fechas" />
+                                        <uc:OcrTextInfo Region="252, 207, 13, 11" Text="de" />
+                                        <uc:OcrTextInfo Region="267, 206, 64, 12" Text="Escrituracion" />
+                                        <uc:OcrTextInfo Region="168, 226, 31, 11" Text="Fecha" />
+                                        <uc:OcrTextInfo Region="201, 226, 29, 11" Text="Inicial:" />
+                                        <uc:OcrTextInfo Region="238, 226, 57, 11" Text="01/09/2025" />
+                                        <uc:OcrTextInfo Region="309, 226, 31, 11" Text="Fecha" />
+                                        <uc:OcrTextInfo Region="342, 226, 25, 11" Text="Final:" />
+                                        <uc:OcrTextInfo Region="376, 226, 56, 11" Text="15/09/2025" />
+                                        <uc:OcrTextInfo Region="185, 265, 59, 11" Text="Procesados" />
+                                        <uc:OcrTextInfo Region="340, 265, 63, 11" Text="Escriturados" />
+                                        <uc:OcrTextInfo Region="358, 287, 20, 11" Text="Con" />
+                                        <uc:OcrTextInfo Region="380, 287, 29, 11" Text="Poliza" />
+                                        <uc:OcrTextInfo Region="358, 303, 16, 11" Text="Sin" />
+                                        <uc:OcrTextInfo Region="376, 302, 29, 12" Text="Poliza" />
+                                        <uc:OcrTextInfo Region="358, 319, 35, 11" Text="Ambos" />
+                                      </scg:List>
+                                    </uc:CVCache.OcrTexts>
+                                  </uc:CVCache>
+                                </scg:List>
+                              </uc:CvCacheContainer.Caches>
+                            </uc:CvCacheContainer>
+                          </p:CVScope.DesignTimeCacheContainer>
+                          <p:CVScope.OCREngine>
+                            <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                              <ActivityFunc.Argument>
+                                <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                              </ActivityFunc.Argument>
+                              <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="400,25" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_3" Image="[Image]" Language="en" NoopExecution="False" Profile="Screen" Scale="1" Timeout="100000" />
+                            </ActivityFunc>
+                          </p:CVScope.OCREngine>
+                          <p:CVScope.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="e4e2d848-a659-4a6b-a71c-a6747a7a1458" InformativeScreenshot="30ac585b82342a1a1bbe66a46c380dd0" WaitForReady="INTERACTIVE">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                            </ui:Target>
+                          </p:CVScope.Target>
+                          <p:CVScope.UseLocalServer>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </p:CVScope.UseLocalServer>
+                        </p:CVScope>
+                      </Sequence>
+                    </ActivityAction>
+                  </uix:NApplicationCard.Body>
+                  <uix:NApplicationCard.TargetApp>
+                    <uix:TargetApp Area="1922, 71, 678, 520" FilePath="E:\EnkontrolV9\Aplicaciones_V9\Vivienda\smcte.exe" IconBase64="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" InformativeScreenshot="09a0ef22e667865d55695b8da5ebcc1b.png" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='10.112.20.12 - Conexión a Escritorio remoto' /&gt;&lt;wnd app='smcte.exe' cls='FNWND*' title='Sistema de Comercialización de Vivienda                         *' /&gt;&lt;wnd cls='FNWND*' title='Reporte de Escrituración     [W_SMC260]' /&gt;" Title="Sistema de Comercialización de Vivienda                         *" />
+                  </uix:NApplicationCard.TargetApp>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NApplicationCard>
+              </Sequence>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="1920, 0, 1920, 1080" FilePath="C:\Windows\System32\mstsc.exe" IconBase64="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" InformativeScreenshot="cca11eee3cd4a07558faee8a522bd89a.png" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='10.112.20.12 - Conexión a Escritorio remoto' /&gt;" Title="10.112.20.12 - Conexión a Escritorio remoto" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>

@@ -29,6 +29,10 @@
             {
               "label": "Generar excel y xml por cliente",
               "value": "genera"
+            },
+            {
+              "label": "Registra en el portal AntiLavado",
+              "value": "registra"
             }
           ]
         },

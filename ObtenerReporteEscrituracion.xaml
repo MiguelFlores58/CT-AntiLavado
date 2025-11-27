@@ -112,13 +112,13 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ObtenerReporteEscrituracion" sap:VirtualizedContainerService.HintSize="1163,792" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ObtenerReporteEscrituracion" sap:VirtualizedContainerService.HintSize="1078,2916" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Principal" sap:VirtualizedContainerService.HintSize="586,769" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Principal" sap:VirtualizedContainerService.HintSize="638,2893" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="strFechaIni" />
         <Variable x:TypeArguments="x:String" Name="strFechaFinal" />
@@ -128,38 +128,38 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: 10.112.20.12 - Conexión a Escritorio remoto" sap:VirtualizedContainerService.HintSize="552,686" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="ab29f4c3-3561-4302-a90d-34d025c72939" Timeout="60" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: 10.112.20.12 - Conexión a Escritorio remoto" sap:VirtualizedContainerService.HintSize="604,2810" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="ab29f4c3-3561-4302-a90d-34d025c72939" Timeout="60" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518,370" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="570,2490" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Login sistema de comercializacion" sap:VirtualizedContainerService.HintSize="484,57" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence DisplayName="Login sistema de comercializacion" sap:VirtualizedContainerService.HintSize="536,2153" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: smcte.exe" sap:VirtualizedContainerService.HintSize="502,2007" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="ec6e5d52-5191-4fb2-8013-4db70874f805" Timeout="60" Version="V2">
+                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: smcte.exe" sap:VirtualizedContainerService.HintSize="502,2051" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="ec6e5d52-5191-4fb2-8013-4db70874f805" Timeout="60" Version="V2">
                   <uix:NApplicationCard.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,1689" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,1725" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="211f2cb4-dacd-491b-a058-1bd419a75463" DisplayName="CV Screen Scope 'pbdw115'" sap:VirtualizedContainerService.HintSize="434,1627" sap2010:WorkflowViewState.IdRef="CVScope_1" SendOnPremData="False" Version="V6">
+                        <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="211f2cb4-dacd-491b-a058-1bd419a75463" DisplayName="CV Screen Scope 'pbdw115'" sap:VirtualizedContainerService.HintSize="434,1659" sap2010:WorkflowViewState.IdRef="CVScope_1" SendOnPremData="False" Version="V6">
                           <p:CVScope.Body>
                             <ActivityAction x:TypeArguments="x:Object">
                               <ActivityAction.Argument>
@@ -215,8 +215,8 @@
                                     </ui:Target>
                                   </p:CvTypeIntoWithDescriptor.Target>
                                 </p:CvTypeIntoWithDescriptor>
-                                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="400,212" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3" />
-                                <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" Descriptor="[&quot;Target: InputBox (69,255,115,21)&quot; +&#xA;&quot;Anchor: Text 'Password:' (8,258,60,11)&quot;]" DesignTimeCacheId="211f2cb4-dacd-491b-a058-1bd419a75463" DesignTimeScaleFactor="1" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,219" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_3" InformativeScreenshot="eab6964118e7044fef9029ac7b9a55d2" NumberOfScrolls="2" ScrollDirection="None" Text="[&quot;r2d2arturo&quot;]" Version="V6">
+                                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="400,220" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3" />
+                                <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" Descriptor="[&quot;Target: InputBox (69,255,115,21)&quot; +&#xA;&quot;Anchor: Text 'Password:' (8,258,60,11)&quot;]" DesignTimeCacheId="211f2cb4-dacd-491b-a058-1bd419a75463" DesignTimeScaleFactor="1" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,227" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_3" InformativeScreenshot="eab6964118e7044fef9029ac7b9a55d2" NumberOfScrolls="2" ScrollDirection="None" Text="[&quot;r2d2arturo&quot;]" Version="V6">
                                   <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
                                     <uc:CvDescriptor Id="75004cb6-7aa9-402c-8489-c945a6ecc511">
                                       <uc:CvDescriptor.Anchors>
@@ -240,7 +240,7 @@
                                     </ui:Target>
                                   </p:CvTypeIntoWithDescriptor.Target>
                                 </p:CvTypeIntoWithDescriptor>
-                                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="400,203" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" Shortcuts="[d(hk)][k(Enter)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V3" />
+                                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="400,211" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" Shortcuts="[d(hk)][k(Enter)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V3" />
                               </Sequence>
                             </ActivityAction>
                           </p:CVScope.Body>
@@ -354,7 +354,7 @@
                   </uix:NApplicationCard.TargetApp>
                 </uix:NApplicationCard>
               </Sequence>
-              <Sequence DisplayName="Elegir la opcion del reporte" sap:VirtualizedContainerService.HintSize="484,57" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <Sequence DisplayName="Elegir la opcion del reporte" sap:VirtualizedContainerService.HintSize="536,61" sap2010:WorkflowViewState.IdRef="Sequence_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -718,13 +718,13 @@
                   </uix:NApplicationCard.TargetApp>
                 </uix:NApplicationCard>
               </Sequence>
-              <Sequence DisplayName="Obtener el reporte" sap:VirtualizedContainerService.HintSize="484,194" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence DisplayName="Obtener el reporte" sap:VirtualizedContainerService.HintSize="536,210" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Inicializar dias" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <Sequence DisplayName="Inicializar dias" sap:VirtualizedContainerService.HintSize="450,61" sap2010:WorkflowViewState.IdRef="Sequence_11">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -748,30 +748,35 @@
                     </Assign.Value>
                   </Assign>
                 </Sequence>
-                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Remote Desktop: Reporte de Escrituración     [W_SMC260]" sap:VirtualizedContainerService.HintSize="450,50" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="60130ab7-f1cb-42b1-8ed2-1acd2fa239fa" Timeout="60" Version="V2">
+                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Remote Desktop: Reporte de Escrituración     [W_SMC260]" sap:VirtualizedContainerService.HintSize="450,54" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="60130ab7-f1cb-42b1-8ed2-1acd2fa239fa" Timeout="60" Version="V2">
                   <uix:NApplicationCard.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,1372" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,1396" sap2010:WorkflowViewState.IdRef="Sequence_12">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="6439e464-0e3c-4c47-a580-040dee77a181" DisplayName="CV Screen Scope 'FNWND3115'" sap:VirtualizedContainerService.HintSize="434,1310" sap2010:WorkflowViewState.IdRef="CVScope_3" SendOnPremData="False" Version="V6">
+                        <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="6439e464-0e3c-4c47-a580-040dee77a181" DisplayName="CV Screen Scope 'FNWND3115'" sap:VirtualizedContainerService.HintSize="434,1336" sap2010:WorkflowViewState.IdRef="CVScope_3" SendOnPremData="False" Version="V6">
                           <p:CVScope.Body>
                             <ActivityAction x:TypeArguments="x:Object">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                               </ActivityAction.Argument>
                               <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_13">
-                                <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="2000" Descriptor="[&quot;Target: Text '01/09/2025' (238,226,57,11)&quot;]" DesignTimeCacheId="6439e464-0e3c-4c47-a580-040dee77a181" DesignTimeScaleFactor="1" DisplayName="CV Type Into - Text" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,219" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_4" InformativeScreenshot="14c0e9c2689628587d8c82696c7d292e" NumberOfScrolls="2" ScrollDirection="None" Text="[strFechaIni]" Version="V6">
+                                <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="2000" Descriptor="[&quot;Target: InputBox (232,222,70,18)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Fecha Inicial:' (168,226,62,11)&quot;]" DesignTimeCacheId="6439e464-0e3c-4c47-a580-040dee77a181" DesignTimeScaleFactor="1" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,227" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_4" InformativeScreenshot="4449082e0c69735cd92e2d39324c8a73" NumberOfScrolls="2" ScrollDirection="None" Text="[strFechaIni]" Version="V6">
                                   <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
-                                    <uc:CvDescriptor Id="1df50c07-d2fc-4ad2-8e57-c05790e50a0c">
+                                    <uc:CvDescriptor Id="a1d9e9ce-c5e8-40a2-83d3-9cacee87c647">
+                                      <uc:CvDescriptor.Anchors>
+                                        <x:Array Type="uc:CvElementDescriptor">
+                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="168, 226, 62, 11" ElementType="Text" Text="Fecha Inicial:" />
+                                        </x:Array>
+                                      </uc:CvDescriptor.Anchors>
                                       <uc:CvDescriptor.Target>
-                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="238, 226, 57, 11" ElementType="Text" Text="01/09/2025" />
+                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="232, 222, 70, 18" ElementType="InputBox" />
                                       </uc:CvDescriptor.Target>
                                     </uc:CvDescriptor>
                                   </p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
@@ -786,11 +791,16 @@
                                     </ui:Target>
                                   </p:CvTypeIntoWithDescriptor.Target>
                                 </p:CvTypeIntoWithDescriptor>
-                                <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="2000" Descriptor="[&quot;Target: Text '15/09/2025' (376,226,56,11)&quot;]" DesignTimeCacheId="6439e464-0e3c-4c47-a580-040dee77a181" DesignTimeScaleFactor="1" DisplayName="CV Type Into - Text" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,219" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_5" InformativeScreenshot="dee4855ea67db2e0e34c295027dfdb3a" NumberOfScrolls="2" ScrollDirection="None" Text="[strFechaFinal]" Version="V6">
+                                <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="2000" Descriptor="[&quot;Target: InputBox (369,222,71,19)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Fecha Final:' (309,226,58,11)&quot;]" DesignTimeCacheId="6439e464-0e3c-4c47-a580-040dee77a181" DesignTimeScaleFactor="1" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,227" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_5" InformativeScreenshot="f2e027f382962f5072f3e5f4f9a94027" NumberOfScrolls="2" ScrollDirection="None" Text="[strFechaFinal]" Version="V6">
                                   <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
-                                    <uc:CvDescriptor Id="1013bbc5-48f3-4450-b879-ec03acbd00a9">
+                                    <uc:CvDescriptor Id="9725228d-9b96-4474-9796-326362662b80">
+                                      <uc:CvDescriptor.Anchors>
+                                        <x:Array Type="uc:CvElementDescriptor">
+                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="309, 226, 58, 11" ElementType="Text" Text="Fecha Final:" />
+                                        </x:Array>
+                                      </uc:CvDescriptor.Anchors>
                                       <uc:CvDescriptor.Target>
-                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="376, 226, 56, 11" ElementType="Text" Text="15/09/2025" />
+                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="369, 222, 71, 19" ElementType="InputBox" />
                                       </uc:CvDescriptor.Target>
                                     </uc:CvDescriptor>
                                   </p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
@@ -805,7 +815,7 @@
                                     </ui:Target>
                                   </p:CvTypeIntoWithDescriptor.Target>
                                 </p:CvTypeIntoWithDescriptor>
-                                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBefore="2" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="400,212" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" Shortcuts="[d(hk)][k(f5)][u(hk)]" Version="V3" />
+                                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBefore="2" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="400,220" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" Shortcuts="[d(hk)][k(f5)][u(hk)]" Version="V3" />
                                 <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBefore="3" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="400,212" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_5" Shortcuts="[d(hk)][k(f4)][u(hk)]" Version="V3" />
                                 <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Dar click en SI exportar a Excel" sap:VirtualizedContainerService.HintSize="400,57" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" ScopeGuid="201fcb32-1fc3-4cc6-8476-2cd174a9b579" Timeout="60" Version="V2">
                                   <uix:NApplicationCard.Body>

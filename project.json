@@ -5,6 +5,7 @@
   "main": "CT-AntiLavado.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[3.2.1]",
+    "UiPath.Form.Activities": "25.4.3",
     "UiPath.GSuite.Activities": "[3.3.10]",
     "UiPath.System.Activities": "[25.4.4]",
     "UiPath.UIAutomation.Activities": "[23.10.9]"
@@ -36,7 +37,6 @@
     "projectProfile": "Developement",
     "outputType": "Process",
     "libraryOptions": {
-      "includeOriginalXaml": false,
       "privateWorkflows": []
     },
     "processOptions": {

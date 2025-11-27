@@ -1,0 +1,49 @@
+﻿{
+  "Metadata": {
+    "Id": "7691c0ef-90b3-4dc3-88f0-ae445c3182ac",
+    "Kind": "FormIo"
+  },
+  "DesignProperties": {
+    "Title": "Seleccion",
+    "Theme": "Default",
+    "ShowInTaskbar": true,
+    "ShowMargin": true,
+    "CustomStyle": ""
+  },
+  "Data": {
+    "components": [
+      {
+        "label": "Selecciona",
+        "widget": "choicesjs",
+        "tableView": true,
+        "data": {
+          "values": [
+            {
+              "label": "Obtener archivo de escrituracion",
+              "value": "escritura"
+            },
+            {
+              "label": "Conciliar clientes a procesar",
+              "value": "concilia"
+            },
+            {
+              "label": "Generar excel y xml por cliente",
+              "value": "genera"
+            }
+          ]
+        },
+        "key": "selecciona",
+        "type": "select",
+        "input": true
+      },
+      {
+        "type": "button",
+        "label": "Submit",
+        "key": "submit",
+        "disableOnInvalid": true,
+        "input": true,
+        "tableView": false
+      }
+    ]
+  }
+}

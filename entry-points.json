@@ -1,0 +1,10 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "entryPoints": [
+    {
+      "filePath": "CT-AntiLavado.xaml",
+      "uniqueId": "2ba5e0d1-4445-4a9b-807c-491cd5623c5a",
+      "type": "process"
+    }
+  ]
+}

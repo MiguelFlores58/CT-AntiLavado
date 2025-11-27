@@ -1,0 +1,6 @@
+{
+  "Name": "CT-AntiLavado",
+  "ProjectType": "Process",
+  "Description": "Proceso AntiLavado",
+  "MainFile": "CT-AntiLavado.xaml"
+}

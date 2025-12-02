@@ -53,6 +53,7 @@
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>UiPath.OCR.Activities</x:String>
       <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -126,9 +127,10 @@
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Parallel</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="LeerEstadosCuenta" sap:VirtualizedContainerService.HintSize="1079,11861" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="LeerEstadosCuenta" sap:VirtualizedContainerService.HintSize="1079,12306" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtClientes" />
       <Variable x:TypeArguments="x:String" Name="strPeriodo" />
@@ -141,7 +143,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Principal de leer estados de cuenta" sap:VirtualizedContainerService.HintSize="822,11838" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Principal de leer estados de cuenta" sap:VirtualizedContainerService.HintSize="822,12283" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dtSantander" />
         <Variable x:TypeArguments="sd:DataTable" Name="dtBBVA" />
@@ -149,6 +151,7 @@
         <Variable x:TypeArguments="x:String" Name="strPath" />
         <Variable x:TypeArguments="x:String" Name="strMesAnio" />
         <Variable x:TypeArguments="x:String" Name="strNombreArchMovimientos" />
+        <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="dictMeses" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -476,7 +479,7 @@
           </TryCatch>
         </Sequence>
       </Sequence>
-      <Sequence DisplayName="Obtener movimientos de Clientes" sap:VirtualizedContainerService.HintSize="788,7226" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <Sequence DisplayName="Obtener movimientos de Clientes" sap:VirtualizedContainerService.HintSize="788,7374" sap2010:WorkflowViewState.IdRef="Sequence_6">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd:DataTable" Name="dtTemporalMovimientos" />
         </Sequence.Variables>
@@ -486,13 +489,13 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: 10.112.20.12 - Conexión a Escritorio remoto" sap:VirtualizedContainerService.HintSize="754,7134" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="5cada01e-adf8-4066-901d-78127de42780" Timeout="60" Version="V2">
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: 10.112.20.12 - Conexión a Escritorio remoto" sap:VirtualizedContainerService.HintSize="754,7282" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="5cada01e-adf8-4066-901d-78127de42780" Timeout="60" Version="V2">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="720,6814" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="720,6962" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -561,9 +564,9 @@
                     </uix:NApplicationCard.TargetApp>
                   </uix:NApplicationCard>
                 </Sequence>
-                <ui:BuildDataTable DataTable="[dtTemporalMovimientos]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="686,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column1&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column2&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column3&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column4&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column5&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column6&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column7&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column8&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column9&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column10&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column11&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column12&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column13&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
-                <ui:BuildDataTable DataTable="[dtMovsClientes]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="686,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column1&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column2&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column3&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column4&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column5&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column6&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column7&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column8&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column9&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column10&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column11&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column12&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column13&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
-                <Sequence sap2010:Annotation.AnnotationText="Se refiere al reporte de movimientos" DisplayName="Obtener el reporte por cada cliente de la data table dtClienteFiltrado" sap:VirtualizedContainerService.HintSize="686,4640" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <ui:BuildDataTable DataTable="[dtTemporalMovimientos]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="686,96" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Column1&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Column2&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column3&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column4&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column5&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column6&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column7&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column8&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column9&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column10&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column11&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column12&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column13&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column14&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                <ui:BuildDataTable DataTable="[dtMovsClientes]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="686,96" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Column1&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Column2&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column3&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column4&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column5&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column6&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column7&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column8&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column9&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column10&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column11&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column12&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column13&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Column14&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                <Sequence sap2010:Annotation.AnnotationText="Se refiere al reporte de movimientos" DisplayName="Obtener el reporte por cada cliente de la data table dtClienteFiltrado" sap:VirtualizedContainerService.HintSize="686,4780" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -571,13 +574,13 @@
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtClientesFiltrados]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="652,4520" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtClientesFiltrados]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="652,4654" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                     <ui:ForEachRow.Body>
                       <ActivityAction x:TypeArguments="sd:DataRow">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="650,4341" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="650,4475" sap2010:WorkflowViewState.IdRef="Sequence_20">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="strCveCliente" />
                           </Sequence.Variables>
@@ -586,7 +589,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="616,175" sap2010:WorkflowViewState.IdRef="Assign_6">
+                          <Assign sap:VirtualizedContainerService.HintSize="616,179" sap2010:WorkflowViewState.IdRef="Assign_6">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[strCveCliente]</OutArgument>
                             </Assign.To>
@@ -971,7 +974,7 @@
                               </sap:WorkflowViewStateService.ViewState>
                             </uix:NApplicationCard>
                           </Sequence>
-                          <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="40b59ed0-2c0d-4207-876e-a1bed92d38dd" DisplayName="Usar Pantalla de Filtros de busqueda de movimientos" sap:VirtualizedContainerService.HintSize="616,816" sap2010:WorkflowViewState.IdRef="CVScope_3" SendOnPremData="False" Version="V6">
+                          <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="40b59ed0-2c0d-4207-876e-a1bed92d38dd" DisplayName="Usar Pantalla de Filtros de busqueda de movimientos" sap:VirtualizedContainerService.HintSize="616,942" sap2010:WorkflowViewState.IdRef="CVScope_3" SendOnPremData="False" Version="V6">
                             <p:CVScope.Body>
                               <ActivityAction x:TypeArguments="x:Object">
                                 <ActivityAction.Argument>
@@ -1017,16 +1020,17 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </uix:NKeyboardShortcuts>
-                                  <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" Descriptor="[&quot;Target: InputBox (173,158,52,19)&quot; +&#xA;&quot;Anchor: Text '11088' (194,162,28,11)&quot;]" DesignTimeCacheId="40b59ed0-2c0d-4207-876e-a1bed92d38dd" DesignTimeScaleFactor="1" DisplayName="Ingresar Clave FInal" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,61" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_2" InformativeScreenshot="3ef1dd4b995b8eb12880d61e69947733" NumberOfScrolls="2" ScrollDirection="None" Text="[strCveCliente]" Version="V6">
+                                  <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" Descriptor="[&quot;Target: InputBox (174,229,52,19)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Final:' (143,233,26,11)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Periodo' (94,271,37,12)&quot;]" DesignTimeCacheId="34f4df05-0360-4910-8500-b000c42382bb" DesignTimeScaleFactor="1" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,227" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_2" InformativeScreenshot="3aedd69b1d6e835d21e8e68aa85f3550" NumberOfScrolls="2" ScrollDirection="None" Text="[strCveCliente]" Version="V6">
                                     <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
-                                      <uc:CvDescriptor Id="5438f6f7-ff49-4c15-8dcb-00757d5f343b">
+                                      <uc:CvDescriptor Id="18754e4c-f02e-448e-a501-01705c7dab4c">
                                         <uc:CvDescriptor.Anchors>
                                           <x:Array Type="uc:CvElementDescriptor">
-                                            <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="194, 162, 28, 11" ElementType="Text" Text="11088" />
+                                            <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="143, 233, 26, 11" ElementType="Text" Text="Final:" />
+                                            <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="94, 271, 37, 12" ElementType="Text" Text="Periodo" />
                                           </x:Array>
                                         </uc:CvDescriptor.Anchors>
                                         <uc:CvDescriptor.Target>
-                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="173, 158, 52, 19" ElementType="InputBox" />
+                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="174, 229, 52, 19" ElementType="InputBox" />
                                         </uc:CvDescriptor.Target>
                                       </uc:CvDescriptor>
                                     </p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
@@ -1042,7 +1046,7 @@
                                     </p:CvTypeIntoWithDescriptor.Target>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
@@ -1055,7 +1059,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </uix:NKeyboardShortcuts>
-                                  <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" Descriptor="[&quot;Target: Text '01/12/2025' (198,221,55,11)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Inicial:' (153,221,30,11)&quot;]" DesignTimeCacheId="40b59ed0-2c0d-4207-876e-a1bed92d38dd" DesignTimeScaleFactor="1" DisplayName="Ingresar Fecha Inicial" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,61" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_3" InformativeScreenshot="eceb2fabf7ca4c8f60fe7ba2d8dc1291" NumberOfScrolls="2" ScrollDirection="None" Text="[&quot;01/01/2000&quot;]" Version="V6">
+                                  <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" Descriptor="[&quot;Target: Text '01/12/2025' (198,221,55,11)&quot; +&#xA;&quot;Anchor: Text 'Inicial:' (153,221,30,11)&quot;]" DesignTimeCacheId="40b59ed0-2c0d-4207-876e-a1bed92d38dd" DesignTimeScaleFactor="1" DisplayName="Ingresar Fecha Inicial" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,61" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_3" InformativeScreenshot="eceb2fabf7ca4c8f60fe7ba2d8dc1291" NumberOfScrolls="2" ScrollDirection="None" Text="[&quot;01/01/2000&quot;]" Version="V6">
                                     <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
                                       <uc:CvDescriptor Id="bc51cccd-c1d2-4340-88a1-99f929b01035">
                                         <uc:CvDescriptor.Anchors>
@@ -1110,8 +1114,8 @@
                             <p:CVScope.DesignTimeCacheContainer>
                               <uc:CvCacheContainer>
                                 <uc:CvCacheContainer.Caches>
-                                  <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
-                                    <uc:CVCache DataSent="False" DisplayName="Screen CV Type Into - 'Inicial (Main)" Id="40b59ed0-2c0d-4207-876e-a1bed92d38dd" InformativeScreenshot="2b0287d876c3ce49edaa2c7207342ec5" LogicalPosition="1922, 71" OcrText="Reporte de Movimientos de Clientes [SCX500] _ X Parametros: Clientes Inicial: 10881 GRACIELA EUFRASIO HERNANDEZ Final: 11088 MAYRA KURI GARFIAS Periodo Inicial: 01/12/2025 Final: 01/12/2025 Formato Tipo de Cliente TC Descripcion Detallado Saldo a Moneda Nacional:" Position="1922, 71" ScreenshotGuid="0caf8c5b-3435-4e00-9bbc-a53a6d29fbce" ServerVersion="0">
+                                  <scg:List x:TypeArguments="uc:CVCache" Capacity="2">
+                                    <uc:CVCache DataSent="False" DisplayName="Screen CV Type Into - 'Inicial (Main)" Id="40b59ed0-2c0d-4207-876e-a1bed92d38dd" InformativeScreenshot="2b0287d876c3ce49edaa2c7207342ec5" LogicalPosition="1920, 0" OcrText="Reporte de Movimientos de Clientes [SCX500] _ X Parametros: Clientes Inicial: 10881 GRACIELA EUFRASIO HERNANDEZ Final: 11088 MAYRA KURI GARFIAS Periodo Inicial: 01/12/2025 Final: 01/12/2025 Formato Tipo de Cliente TC Descripcion Detallado Saldo a Moneda Nacional:" Position="1920, 0" ScreenshotGuid="0caf8c5b-3435-4e00-9bbc-a53a6d29fbce" ServerVersion="0">
                                       <uc:CVCache.CvAnchorRelations>
                                         <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="16">
                                           <uc:AnchorRelationInfo IsTargetText="False" Target="5">
@@ -1265,6 +1269,231 @@
                                           <uc:OcrTextInfo Region="174, 341, 7, 9" Text="a" />
                                           <uc:OcrTextInfo Region="183, 339, 39, 11" Text="Moneda" />
                                           <uc:OcrTextInfo Region="224, 339, 45, 11" Text="Nacional:" />
+                                        </scg:List>
+                                      </uc:CVCache.OcrTexts>
+                                    </uc:CVCache>
+                                    <uc:CVCache DataSent="False" DisplayName="Screen CV Type Into - 'Final:'" Id="34f4df05-0360-4910-8500-b000c42382bb" InformativeScreenshot="53acee5c893ce3e3044a6a2e39ce64c3" LogicalPosition="1920, 0" OcrText="Sistema Integral de Clientes DESARROLLOS INMOBILIARIOS GTH, S.A DE C.V. _ X Reporte Control Datos Generales Procesos Diarios Caja Consultas Reportes Mantenimiento al sistema Configura Ayuda Ventana Salir 0&lt; Reporte de Movimientos de Clientes [SCX500] _ X Parametros: Clientes Inicial: 10881 GRACIELA EUFRASIO HERNANDEZ Final: CESAR MANUEL BELTRAN AGUILAR Periodo Inicial: 01/12/2025 Final: 02/12/2025 Formato Tipo de Cliente TC Descripcion Detallado Saldo a Moneda Nacional:" Position="1920, 0" ScreenshotGuid="92af0e5f-dcb5-4e0a-bf21-79d4f0cab6a5" ServerVersion="0">
+                                      <uc:CVCache.CvAnchorRelations>
+                                        <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="16">
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="8">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>52</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="22">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>55</x:Int32>
+                                                <x:Int32>56</x:Int32>
+                                                <x:Int32>57</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="0">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>41</x:Int32>
+                                                <x:Int32>42</x:Int32>
+                                                <x:Int32>43</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="3">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>45</x:Int32>
+                                                <x:Int32>46</x:Int32>
+                                                <x:Int32>47</x:Int32>
+                                                <x:Int32>48</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="6">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>50</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="1">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>40</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="2">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>44</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="11">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>61</x:Int32>
+                                                <x:Int32>62</x:Int32>
+                                                <x:Int32>63</x:Int32>
+                                                <x:Int32>64</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="7">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>60</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                        </scg:List>
+                                      </uc:CVCache.CvAnchorRelations>
+                                      <uc:CVCache.CvTables>
+                                        <x:Array Type="uc:CvTableInfo">
+                                          <uc:CvTableInfo>
+                                            <uc:CvTableInfo.Columns>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>330</x:Int32>
+                                                <x:Int32>371</x:Int32>
+                                                <x:Int32>514</x:Int32>
+                                              </x:Array>
+                                            </uc:CvTableInfo.Columns>
+                                            <uc:CvTableInfo.Rows>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>359</x:Int32>
+                                                <x:Int32>375</x:Int32>
+                                              </x:Array>
+                                            </uc:CvTableInfo.Rows>
+                                          </uc:CvTableInfo>
+                                        </x:Array>
+                                      </uc:CVCache.CvTables>
+                                      <uc:CVCache.CvUiElements>
+                                        <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="64">
+                                          <uc:CvElementInfo Category="InputBox" Region="232, 203, 273, 19" />
+                                          <uc:CvElementInfo Category="InputBox" Region="175, 203, 53, 19" />
+                                          <uc:CvElementInfo Category="InputBox" Region="174, 229, 52, 19" />
+                                          <uc:CvElementInfo Category="InputBox" Region="231, 229, 273, 19" />
+                                          <uc:CvElementInfo Category="MaximizeButton" Region="1844, 0, 29, 21" />
+                                          <uc:CvElementInfo Category="MinimizeButton" Region="582, 79, 21, 20" />
+                                          <uc:CvElementInfo Category="InputBox" Region="191, 288, 73, 19" />
+                                          <uc:CvElementInfo Category="CheckBox" Region="127, 376, 15, 15" />
+                                          <uc:CvElementInfo Category="InputBox" Region="383, 288, 73, 19" />
+                                          <uc:CvElementInfo Category="CloseButton" Region="622, 80, 21, 21" />
+                                          <uc:CvElementInfo Category="Icon" Region="150, 47, 21, 21" />
+                                          <uc:CvElementInfo Category="CheckBox" Region="127, 408, 15, 15" />
+                                          <uc:CvElementInfo Category="MinimizeButton" Region="1816, 0, 31, 21" />
+                                          <uc:CvElementInfo Category="Icon" Region="632, 46, 20, 20" />
+                                          <uc:CvElementInfo Category="Icon" Region="17, 47, 21, 21" />
+                                          <uc:CvElementInfo Category="Icon" Region="264, 46, 19, 19" />
+                                          <uc:CvElementInfo Category="MaximizeButton" Region="602, 80, 21, 20" />
+                                          <uc:CvElementInfo Category="Icon" Region="291, 47, 23, 21" />
+                                          <uc:CvElementInfo Category="Icon" Region="602, 48, 19, 19" />
+                                          <uc:CvElementInfo Category="Icon" Region="776, 47, 20, 20" />
+                                          <uc:CvElementInfo Category="Icon" Region="109, 46, 22, 21" />
+                                          <uc:CvElementInfo Category="Icon" Region="8, 80, 21, 18" />
+                                          <uc:CvElementInfo Category="CheckBox" Region="321, 335, 14, 14" />
+                                          <uc:CvElementInfo Category="Icon" Region="40, 47, 21, 21" />
+                                          <uc:CvElementInfo Category="CloseButton" Region="1871, 0, 49, 21" />
+                                          <uc:CvElementInfo Category="Icon" Region="545, 47, 19, 20" />
+                                          <uc:CvElementInfo Category="Icon" Region="576, 47, 18, 19" />
+                                          <uc:CvElementInfo Category="Icon" Region="0, 1, 20, 19" />
+                                          <uc:CvElementInfo Category="Icon" Region="462, 48, 20, 17" />
+                                          <uc:CvElementInfo Category="Icon" Region="376, 48, 21, 18" />
+                                          <uc:CvElementInfo Category="Icon" Region="436, 48, 17, 17" />
+                                          <uc:CvElementInfo Category="Icon" Region="406, 48, 16, 17" />
+                                          <uc:CvElementInfo Category="Cell" Region="330, 359, 41, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="371, 359, 143, 16" />
+                                          <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="405, 48, 17, 17" />
+                                          <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="63, 43, 41, 27" />
+                                          <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="435, 48, 18, 18" />
+                                          <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="400, 43, 31, 28" />
+                                          <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="289, 43, 56, 27" />
+                                          <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="217, 43, 70, 27" />
+                                          <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="429, 43, 31, 27" />
+                                          <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="104, 44, 36, 27" />
+                                          <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="375, 48, 22, 18" />
+                                          <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="343, 43, 57, 28" />
+                                          <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="327, 365, 192, 70" />
+                                          <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="458, 43, 56, 27" />
+                                          <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="141, 44, 77, 27" />
+                                          <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="430, 45, 28, 25" />
+                                          <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="545, 47, 19, 20" />
+                                          <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1844, 0, 27, 20" />
+                                          <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="216, 42, 71, 29" />
+                                          <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="4, 43, 60, 28" />
+                                          <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="401, 45, 29, 26" />
+                                          <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="321, 334, 15, 16" />
+                                        </scg:List>
+                                      </uc:CVCache.CvUiElements>
+                                      <uc:CVCache.OcrTexts>
+                                        <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="65">
+                                          <uc:OcrTextInfo Region="623, 4, 53, 14" Text="Sistema" />
+                                          <uc:OcrTextInfo Region="679, 4, 52, 17" Text="Integral" />
+                                          <uc:OcrTextInfo Region="734, 4, 18, 14" Text="de" />
+                                          <uc:OcrTextInfo Region="754, 4, 54, 14" Text="Clientes" />
+                                          <uc:OcrTextInfo Region="975, 4, 101, 14" Text="DESARROLLOS" />
+                                          <uc:OcrTextInfo Region="1078, 4, 107, 14" Text="INMOBILIARIOS" />
+                                          <uc:OcrTextInfo Region="1186, 4, 34, 16" Text="GTH," />
+                                          <uc:OcrTextInfo Region="1223, 4, 23, 14" Text="S.A" />
+                                          <uc:OcrTextInfo Region="1248, 4, 20, 14" Text="DE" />
+                                          <uc:OcrTextInfo Region="1270, 4, 27, 14" Text="C.V." />
+                                          <uc:OcrTextInfo Region="1824, 1, 13, 13" Text="_" />
+                                          <uc:OcrTextInfo Region="1888, 3, 12, 11" Text="X" />
+                                          <uc:OcrTextInfo Region="9, 26, 41, 13" Text="Reporte" />
+                                          <uc:OcrTextInfo Region="62, 25, 37, 12" Text="Control" />
+                                          <uc:OcrTextInfo Region="112, 26, 30, 11" Text="Datos" />
+                                          <uc:OcrTextInfo Region="143, 25, 50, 12" Text="Generales" />
+                                          <uc:OcrTextInfo Region="210, 26, 45, 11" Text="Procesos" />
+                                          <uc:OcrTextInfo Region="256, 26, 34, 11" Text="Diarios" />
+                                          <uc:OcrTextInfo Region="304, 26, 24, 12" Text="Caja" />
+                                          <uc:OcrTextInfo Region="340, 25, 49, 12" Text="Consultas" />
+                                          <uc:OcrTextInfo Region="405, 26, 46, 13" Text="Reportes" />
+                                          <uc:OcrTextInfo Region="464, 26, 72, 11" Text="Mantenimiento" />
+                                          <uc:OcrTextInfo Region="537, 25, 10, 12" Text="al" />
+                                          <uc:OcrTextInfo Region="548, 26, 38, 11" Text="sistema" />
+                                          <uc:OcrTextInfo Region="601, 25, 49, 14" Text="Configura" />
+                                          <uc:OcrTextInfo Region="662, 25, 33, 14" Text="Ayuda" />
+                                          <uc:OcrTextInfo Region="707, 26, 42, 11" Text="Ventana" />
+                                          <uc:OcrTextInfo Region="765, 25, 22, 12" Text="Salir" />
+                                          <uc:OcrTextInfo Region="377, 50, 18, 13" Text="0&lt;" />
+                                          <uc:OcrTextInfo Region="153, 83, 54, 17" Text="Reporte" />
+                                          <uc:OcrTextInfo Region="210, 83, 19, 14" Text="de" />
+                                          <uc:OcrTextInfo Region="231, 83, 87, 14" Text="Movimientos" />
+                                          <uc:OcrTextInfo Region="321, 83, 19, 14" Text="de" />
+                                          <uc:OcrTextInfo Region="341, 83, 54, 14" Text="Clientes" />
+                                          <uc:OcrTextInfo Region="399, 83, 59, 16" Text="[SCX500]" />
+                                          <uc:OcrTextInfo Region="586, 82, 12, 12" Text="_" />
+                                          <uc:OcrTextInfo Region="626, 84, 12, 10" Text="X" />
+                                          <uc:OcrTextInfo Region="47, 141, 59, 12" Text="Parametros:" />
+                                          <uc:OcrTextInfo Region="93, 183, 39, 11" Text="Clientes" />
+                                          <uc:OcrTextInfo Region="139, 207, 30, 11" Text="Inicial:" />
+                                          <uc:OcrTextInfo Region="195, 207, 30, 11" Text="10881" />
+                                          <uc:OcrTextInfo Region="234, 207, 53, 11" Text="GRACIELA" />
+                                          <uc:OcrTextInfo Region="288, 207, 52, 11" Text="EUFRASIO" />
+                                          <uc:OcrTextInfo Region="341, 207, 65, 11" Text="HERNANDEZ" />
+                                          <uc:OcrTextInfo Region="143, 233, 26, 11" Text="Final:" />
+                                          <uc:OcrTextInfo Region="234, 233, 37, 11" Text="CESAR" />
+                                          <uc:OcrTextInfo Region="272, 233, 44, 11" Text="MANUEL" />
+                                          <uc:OcrTextInfo Region="317, 233, 47, 11" Text="BELTRAN" />
+                                          <uc:OcrTextInfo Region="364, 233, 49, 11" Text="AGUILAR" />
+                                          <uc:OcrTextInfo Region="94, 271, 37, 12" Text="Periodo" />
+                                          <uc:OcrTextInfo Region="155, 292, 30, 11" Text="Inicial:" />
+                                          <uc:OcrTextInfo Region="200, 292, 55, 11" Text="01/12/2025" />
+                                          <uc:OcrTextInfo Region="352, 292, 26, 11" Text="Final:" />
+                                          <uc:OcrTextInfo Region="392, 292, 55, 11" Text="02/12/2025" />
+                                          <uc:OcrTextInfo Region="94, 334, 40, 11" Text="Formato" />
+                                          <uc:OcrTextInfo Region="338, 336, 22, 13" Text="Tipo" />
+                                          <uc:OcrTextInfo Region="362, 336, 13, 11" Text="de" />
+                                          <uc:OcrTextInfo Region="377, 336, 33, 11" Text="Cliente" />
+                                          <uc:OcrTextInfo Region="344, 364, 15, 11" Text="TC" />
+                                          <uc:OcrTextInfo Region="413, 362, 60, 14" Text="Descripcion" />
+                                          <uc:OcrTextInfo Region="146, 378, 45, 11" Text="Detallado" />
+                                          <uc:OcrTextInfo Region="146, 410, 28, 11" Text="Saldo" />
+                                          <uc:OcrTextInfo Region="176, 412, 7, 9" Text="a" />
+                                          <uc:OcrTextInfo Region="185, 410, 39, 11" Text="Moneda" />
+                                          <uc:OcrTextInfo Region="226, 410, 45, 11" Text="Nacional:" />
                                         </scg:List>
                                       </uc:CVCache.OcrTexts>
                                     </uc:CVCache>
@@ -1581,6 +1810,18 @@
           </uix:NApplicationCard.TargetApp>
         </uix:NApplicationCard>
       </Sequence>
+      <Assign sap:VirtualizedContainerService.HintSize="788,175" sap2010:WorkflowViewState.IdRef="Assign_12">
+        <Assign.To>
+          <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[dictMeses]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" xml:space="preserve">[New Dictionary(Of String, String) From {
+    {"ENE", "01"}, {"FEB", "02"}, {"MAR", "03"}, {"ABR", "04"},
+    {"MAY", "05"}, {"MYO", "05"}, {"JUN", "06"}, {"JUL", "07"},
+    {"AGO", "08"}, {"SEP", "09"}, {"OCT", "10"}, {"NOV", "11"}, {"DIC", "12"}
+}]</InArgument>
+        </Assign.Value>
+      </Assign>
       <Assign sap:VirtualizedContainerService.HintSize="788,175" sap2010:WorkflowViewState.IdRef="Assign_9">
         <Assign.To>
           <OutArgument x:TypeArguments="sd:DataTable">[dtMovsClientes]</OutArgument>
@@ -1610,64 +1851,37 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <Sequence DisplayName="Comparar Movimientos de Clientes vs Movimientos dePagos" sap:VirtualizedContainerService.HintSize="788,359" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtMovsClientes]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="788,416" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
+        <ui:ForEachRow.Body>
+          <ActivityAction x:TypeArguments="sd:DataRow">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,234" sap2010:WorkflowViewState.IdRef="Sequence_51">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="Assign_13">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Object">[CurrentRow("Column17")]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(CurrentRow("Column16").ToString().Trim().ToUpper(), "^(\d{2})([A-Z]{3})(\d{2}).*", Function(m) m.Groups(1).Value + "/" + dictMeses(m.Groups(2).Value) + "/20" + m.Groups(3).Value)]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEachRow.Body>
+      </ui:ForEachRow>
+      <Sequence DisplayName="Comparar Movimientos de Clientes vs Movimientos dePagos" sap:VirtualizedContainerService.HintSize="788,122" sap2010:WorkflowViewState.IdRef="Sequence_7">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtClientesFiltrados]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="452,267" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
-          <ui:ForEachRow.Body>
-            <ActivityAction x:TypeArguments="sd:DataRow">
-              <ActivityAction.Argument>
-                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
-              </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="Sequence_40">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </Sequence>
-            </ActivityAction>
-          </ui:ForEachRow.Body>
-        </ui:ForEachRow>
-      </Sequence>
-      <Sequence DisplayName="Identificar en BANREGIO movimientos de pagos de casa" sap:VirtualizedContainerService.HintSize="788,57" sap2010:WorkflowViewState.IdRef="Sequence_4">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtBanregio]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="452,411" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
-          <ui:ForEachRow.Body>
-            <ActivityAction x:TypeArguments="sd:DataRow">
-              <ActivityAction.Argument>
-                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
-              </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,234" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                <Sequence.Variables>
-                  <Variable x:TypeArguments="x:String" Name="strConcepto" />
-                </Sequence.Variables>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <Assign sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="Assign_3">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:String">[strConcepto]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">[CurrentRow(2).ToString()]</InArgument>
-                  </Assign.Value>
-                </Assign>
-              </Sequence>
-            </ActivityAction>
-          </ui:ForEachRow.Body>
-        </ui:ForEachRow>
       </Sequence>
       <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="788,114" sap2010:WorkflowViewState.IdRef="Delay_1" />
     </Sequence>
